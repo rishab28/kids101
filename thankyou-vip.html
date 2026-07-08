@@ -26,13 +26,6 @@
   fbq('init', '832552641809527');
   fbq('track', 'PageView');
   fbq('trackCustom', 'ThankYouVIPPageView');
-  
-  // Standard Purchase event for Meta Pixel (Upsell purchase)
-  fbq('track', 'Purchase', {
-    value: 999,
-    currency: 'INR',
-    content_name: 'Happy Tiffin VIP Family Bundle'
-  });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=832552641809527&ev=PageView&noscript=1"
@@ -55,25 +48,14 @@
     <div class="container text-center" style="max-width: 720px; margin: 0 auto; text-align: center;">
       
       <div style="font-size: 4rem; margin-bottom: 20px;">🏆</div>
-      <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 15px;">Order Confirmed: VIP Family Upgrade!</h1>
+      <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 15px;">Order Confirmed: VIP Kids Upgrade!</h1>
       <p class="hero-subtitle" style="font-size: 1.15rem; margin-bottom: 40px; color: var(--text-secondary);">
-        Aapka Complete Family Health System order confirm ho gaya hai. Deliverables details WhatsApp aur Email par 2-5 minutes me mil jayengi.
+        Your complete VIP Snack & Dinner System order is confirmed! Your download details will be sent to your WhatsApp and Email in 2-5 minutes.
       </p>
 
-      <!-- STEP 1: JOIN WHATSAPP COMMUNITY -->
-      <div style="background: #FFFFFF; border: 2px solid var(--secondary); padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin-bottom: 35px; text-align: left;">
-        <h3 style="color: var(--secondary); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 1.3rem;">
-          <span>💬</span> Step 1: Join Smart Moms VIP WhatsApp Group (Recommended)
-        </h3>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
-          Yahan aapko daily family nutrition updates, smart swaps guidelines, and support community milegi. Group turant join karein.
-        </p>
-        <a href="https://chat.whatsapp.com/DvctCt8RgsqLfS7n0RZzyh" class="btn btn-primary btn-pulse" style="background: var(--secondary); box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);" target="_blank" rel="noopener">
-          Join VIP WhatsApp Group Now →
-        </a>
-      </div>
+      <!-- Payment Status Alert Banner -->
+      <div id="payment-status-banner" style="display:none; padding:18px; border-radius:12px; margin:-20px auto 30px; text-align:left; font-size:0.95rem; line-height:1.5; max-width:670px; font-weight: 500; font-family: var(--font-body);"></div>
 
-      <!-- STEP 2: DOWNLOAD DELIVERABLES -->
       <!-- ONBOARDING PROGRESS -->
       <div style="background: #FFFFFF; border: 1px solid var(--border-subtle); padding: 25px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 35px; text-align: left;">
         <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 1.15rem; font-family: var(--font-heading); font-weight: 700;">📋 Your VIP 90-Day Plan:</h3>
@@ -82,99 +64,116 @@
           <div class="item"><span class="c">✅</span> All downloads unlocked — save your PDFs below</div>
           <div class="item"><span class="c">⬜</span> <b>Week 1:</b> Open the 90-Day Tracker, pick 5 recipes, start logging</div>
           <div class="item"><span class="c">⬜</span> <b>Week 2-4:</b> Use the White Food Kid Guide to expand variety</div>
-          <div class="item"><span class="c">⬜</span> <b>Daily:</b> Share tiffin pics in the VIP WhatsApp group</div>
         </div>
       </div>
 
-      <!-- STEP 2: DOWNLOAD CORE DELIVERABLES -->
-      <div class="dl-step">
-        <h3>📥 Step 2: Download Your Core Bundle</h3>
+      <!-- DOWNLOAD CORE DELIVERABLES -->
+      <div id="downloadContainer" style="transition: opacity 0.3s ease;">
+        <div class="dl-step">
+        <h3>📥 Download Your Core Bundle</h3>
         <div class="dl-grid">
           <!-- Core Book -->
           <div class="dl-card">
             <div class="ic">📘</div>
             <div class="meta">
-              <div class="t">The Happy Tiffin Recipe System</div>
+              <div class="t">[Core System] The Happy Tiffin Recipe System</div>
               <div class="s">101 Picky-Eater Approved Indian Recipes (PDF)</div>
             </div>
             <a href="deliverables/Happy_Tiffin_Core_System.pdf" class="dl-btn" download>Download</a>
           </div>
-          <!-- Tiffin Success -->
-          <div class="dl-card">
-            <div class="ic">🍱</div>
-            <div class="meta">
-              <div class="t">School Tiffin Success System</div>
-              <div class="s">Tiffin recipes and ideas (PDF)</div>
-            </div>
-            <a href="deliverables/Happy_Tiffin_Core_System.pdf" class="dl-btn" download>Download</a>
-          </div>
-          <!-- Hidden Protein -->
-          <div class="dl-card">
-            <div class="ic">🥬</div>
-            <div class="meta">
-              <div class="t">Hidden Protein Cheat Sheet</div>
-              <div class="s">Protein-hiding formulas (PDF)</div>
-            </div>
-            <a href="deliverables/Veggie_Stealth_Cheat_Sheet.pdf" class="dl-btn" download>Download</a>
-          </div>
-          <!-- White Food Kid -->
-          <div class="dl-card">
-            <div class="ic">🥛</div>
-            <div class="meta">
-              <div class="t">"White Food Kid" Survival Guide</div>
-              <div class="s">Sensory pickiness guide (PDF)</div>
-            </div>
-            <a href="deliverables/White_Food_Kid_Survival_Guide.pdf" class="dl-btn" download>Download</a>
-          </div>
-          <!-- 5-min Breakfast -->
-          <div class="dl-card">
-            <div class="ic">⏱️</div>
-            <div class="meta">
-              <div class="t">5-Minute Breakfast Guide</div>
-              <div class="s">Ultra-fast mornings (PDF)</div>
-            </div>
-            <a href="deliverables/Five_Minute_Breakfast_Guide.pdf" class="dl-btn" download>Download</a>
-          </div>
-          <!-- Rotation Planner -->
-          <div class="dl-card">
-            <div class="ic">📅</div>
-            <div class="meta">
-              <div class="t">7-Day Tiffin Rotation Planner</div>
-              <div class="s">Decision fatigue planner (PDF)</div>
-            </div>
-            <a href="deliverables/Breakfast_Tiffin_Rotation_Planner.pdf" class="dl-btn" download>Download</a>
-          </div>
+          
           <!-- Picky Eater Tracker -->
           <div class="dl-card">
             <div class="ic">📈</div>
             <div class="meta">
-              <div class="t">Picky Eater Progress Tracker</div>
-              <div class="s">Measure food acceptance (PDF)</div>
+              <div class="t">[Core System Add-on] Picky Eater Progress Tracker</div>
+              <div class="s">Measure and track food acceptance progress (PDF)</div>
             </div>
             <a href="deliverables/Picky_Eater_Progress_Tracker.pdf" class="dl-btn" download>Download</a>
           </div>
+          
           <!-- Protein Pantry -->
           <div class="dl-card">
             <div class="ic">🛒</div>
             <div class="meta">
-              <div class="t">Indian Protein Pantry Checklist</div>
-              <div class="s">Protein pantry checklist (PDF)</div>
+              <div class="t">[Core System Add-on] Indian Protein Pantry Checklist</div>
+              <div class="s">Healthy natural protein shopping sheet (PDF)</div>
             </div>
             <a href="deliverables/Indian_Protein_Pantry_Checklist.pdf" class="dl-btn" download>Download</a>
+          </div>
+
+          <!-- Bonus 1 Core -->
+          <div class="dl-card">
+            <div class="ic">⏱️</div>
+            <div class="meta">
+              <div class="t">[Bonus #1] Emergency 5-Minute Breakfast Guide</div>
+              <div class="s">Ultra-fast healthy mornings recipe sheet (PDF)</div>
+            </div>
+            <a href="deliverables/Five_Minute_Breakfast_Guide.pdf" class="dl-btn" download>Download</a>
+          </div>
+
+          <!-- Tiffin Success -->
+          <div class="dl-card">
+            <div class="ic">🍱</div>
+            <div class="meta">
+              <div class="t">[Bonus #1 Add-on] School Tiffin Success System</div>
+              <div class="s">Tiffin ideas so they bring back empty boxes (PDF)</div>
+            </div>
+            <a href="deliverables/School_Tiffin_Success_System.pdf" class="dl-btn" download>Download</a>
+          </div>
+
+          <!-- Rotation Planner -->
+          <div class="dl-card">
+            <div class="ic">📅</div>
+            <div class="meta">
+              <div class="t">[Bonus #1 Add-on] 7-Day Tiffin Rotation Planner</div>
+              <div class="s">Auto-pilot calendar to end decision fatigue (PDF)</div>
+            </div>
+            <a href="deliverables/Breakfast_Tiffin_Rotation_Planner.pdf" class="dl-btn" download>Download</a>
+          </div>
+          
+          <!-- Bonus 4 Core -->
+          <div class="dl-card">
+            <div class="ic">🥛</div>
+            <div class="meta">
+              <div class="t">[Bonus #4] "White Food Kid" Survival Guide</div>
+              <div class="s">Psychology hacks for sensory pickiness (PDF)</div>
+            </div>
+            <a href="deliverables/White_Food_Kid_Survival_Guide.pdf" class="dl-btn" download>Download</a>
+          </div>
+
+          <!-- Hidden Protein -->
+          <div class="dl-card">
+            <div class="ic">🥬</div>
+            <div class="meta">
+              <div class="t">[Bonus #5] Veggie & Protein Stealth Cheat Sheet</div>
+              <div class="s">15 methods to hide nutrients in daily foods (PDF)</div>
+            </div>
+            <a href="deliverables/Veggie_Stealth_Cheat_Sheet.pdf" class="dl-btn" download>Download</a>
+          </div>
+
+          <!-- Immunity Booster Drinks & Soups -->
+          <div class="dl-card">
+            <div class="ic">🧃</div>
+            <div class="meta">
+              <div class="t">[Bonus #8] Immunity Booster Drinks & Soups Guide</div>
+              <div class="s">15 kid-friendly recipes with hidden boosters (PDF)</div>
+            </div>
+            <a href="deliverables/Immunity_Booster_Drinks_Guide.pdf" class="dl-btn" download>Download</a>
           </div>
         </div>
       </div>
 
       <!-- STEP 3: DOWNLOAD VIP DELIVERABLES -->
       <div class="dl-step" style="border-color: rgba(255, 112, 32, 0.4); background: linear-gradient(135deg, rgba(255, 112, 32, 0.05), rgba(255, 112, 32, 0.02)); margin-top: 30px;">
-        <h3 style="color: var(--primary);">💎 Step 3: Download Your VIP 90-Day Upgrade</h3>
+        <h3 style="color: var(--primary);">💎 Step 3: Download Your VIP Upgrade</h3>
         <div class="dl-grid">
           <!-- Parents Meal Planner -->
           <div class="dl-card" style="border-color: rgba(255, 112, 32, 0.2);">
             <div class="ic" style="background: rgba(255, 112, 32, 0.15);">📋</div>
             <div class="meta">
-              <div class="t">Complete Family Meal Planner</div>
-              <div class="s">High-Protein Meal Plans for Parents (PDF)</div>
+              <div class="t">Picky-Eater 30-Day Dinner Rotation Blueprint</div>
+              <div class="s">Healthy kid-approved dinner recipes (PDF)</div>
             </div>
             <a href="deliverables/Family_Health_Blueprint.pdf" class="dl-btn" style="background: var(--primary);" download>Download</a>
           </div>
@@ -182,8 +181,8 @@
           <div class="dl-card" style="border-color: rgba(255, 112, 32, 0.2);">
             <div class="ic" style="background: rgba(255, 112, 32, 0.15);">🍮</div>
             <div class="meta">
-              <div class="t">"No-Sugar" Desi Desserts Guide</div>
-              <div class="s">Safe natural Indian sweets (PDF)</div>
+              <div class="t">Kids' Sugar-Free Snack & Dessert Vault</div>
+              <div class="s">Healthy snack swaps & dessert recipes (PDF)</div>
             </div>
             <a href="deliverables/No_Sugar_Desi_Desserts.pdf" class="dl-btn" style="background: var(--primary);" download>Download</a>
           </div>
@@ -191,25 +190,26 @@
           <div class="dl-card" style="border-color: rgba(255, 112, 32, 0.2);">
             <div class="ic" style="background: rgba(255, 112, 32, 0.15);">👵</div>
             <div class="meta">
-              <div class="t">Grandparents Wellness Guide</div>
-              <div class="s">Easy digestion metabolic recipes (PDF)</div>
+              <div class="t">Immune-Boosting Kids Smoothies & Soups</div>
+              <div class="s">Nutrient-packed milkshakes & soup recipes (PDF)</div>
             </div>
             <a href="deliverables/Grandparents_Wellness_Guide.pdf" class="dl-btn" style="background: var(--primary);" download>Download</a>
           </div>
           <!-- Kitchen Audit -->
           <div class="dl-card" style="border-color: rgba(255, 112, 32, 0.2);">
-            <div class="ic" style="background: rgba(255, 112, 32, 0.15);">🛒</div>
+            <div class="ic" style="background: rgba(255, 112, 32, 0.15);">🔍</div>
             <div class="meta">
-              <div class="t">Kitchen Toxic Chemical Audit</div>
-              <div class="s">Grocery scanner checklist (PDF)</div>
+              <div class="t">Smart Grocery Chemicals & Additives Scanner</div>
+              <div class="s">Scan package labels for hidden additives (PDF)</div>
             </div>
-            <a href="deliverables/Toxic_Chemical_Audit_Checklist.pdf" class="dl-btn" style="background: var(--primary);" download>Download</a>
+            <a href="deliverables/Packaging_Chemical_Scanner_Checklist.pdf" class="dl-btn" style="background: var(--primary);" download>Download</a>
           </div>
         </div>
         
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 20px; text-align: center; font-style: italic;">
           💡 Tip: Save these PDFs to your phone or computer files for offline access.
         </p>
+      </div>
       </div>
 
     </div>
@@ -232,15 +232,113 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
+  <footer class="footer" style="padding: 40px 20px; background: #2D241E; color: #C0B7B1; text-align: center; font-size: 0.9rem; font-family: var(--font-body);">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
       <p>© 2026 The Happy Tiffin. All rights reserved.</p>
       <p style="margin-top: 10px; font-size: 0.85rem;">
-        <a href="privacy.html">Privacy Policy</a> | 
-        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html" style="color: #C0B7B1; text-decoration: underline;">Privacy Policy</a> | 
+        <a href="terms.html" style="color: #C0B7B1; text-decoration: underline;">Terms of Service</a>
       </p>
+      <p style="margin-top: 5px; font-size: 0.82rem; color: #A89E97;">
+        Support Contact: secretswapvault@gmail.com
+      </p>
+      <div class="footer-disclaimer" style="font-size: 0.82rem; color: #A89E97; margin-top: 20px; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; text-align: justify;">
+        <p><strong>Disclaimer:</strong> This website (The Happy Tiffin) is not affiliated with Facebook, Instagram, or Meta Platforms, Inc. in any way. The testimonies and chat feedback shared are based on individual experiences of mothers and we do not guarantee similar results for every child. All nutritional recipes and swaps are developed based on home-cooking practices and general child health information, and are not intended to replace professional pediatric or medical advice. Always consult your pediatrician if your child has specific allergies, medical conditions, or eating disorders.</p>
+      </div>
     </div>
   </footer>
+
+<script>
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get('order_id');
+    const dlContainer = document.getElementById('downloadContainer');
+    const banner = document.getElementById('payment-status-banner');
+    
+    if (orderId) {
+      if (dlContainer) {
+        dlContainer.style.opacity = '0.15';
+        dlContainer.style.pointerEvents = 'none';
+      }
+      
+      if (banner) {
+        banner.style.display = 'block';
+        banner.style.background = '#FFF3E0';
+        banner.style.border = '1px solid #FFE0B2';
+        banner.style.color = '#E65100';
+        banner.innerHTML = '🕒 <strong>Verifying your payment...</strong> We are checking your VIP upgrade order status with Cashfree. Please do not close this page.';
+      }
+      
+      fetch('/api/verify-payment?order_id=' + encodeURIComponent(orderId))
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === 'SUCCESS') {
+            if (dlContainer) {
+              dlContainer.style.opacity = '1';
+              dlContainer.style.pointerEvents = 'auto';
+            }
+            
+            if (banner) {
+              banner.style.background = '#E8F5E9';
+              banner.style.border = '1px solid #C8E6C9';
+              banner.style.color = '#2E7D32';
+              banner.innerHTML = '✅ <strong>VIP Access Verified!</strong> Your order upgrade is confirmed. Download your guides below.';
+              setTimeout(() => { banner.style.display = 'none'; }, 5000);
+            }
+            
+            localStorage.setItem('vip_purchased', 'true');
+            const verifiedOrders = JSON.parse(localStorage.getItem('verified_orders') || '{}');
+            verifiedOrders[orderId] = true;
+            localStorage.setItem('verified_orders', JSON.stringify(verifiedOrders));
+            
+            const trackedOrders = JSON.parse(localStorage.getItem('tracked_orders') || '{}');
+            if (!trackedOrders[orderId] && typeof fbq === 'function') {
+              fbq('track', 'Purchase', {
+                value: Number(data.order_amount || 999),
+                currency: data.order_currency || 'INR',
+                content_name: 'Happy Tiffin VIP Family Bundle'
+              });
+              trackedOrders[orderId] = true;
+              localStorage.setItem('tracked_orders', JSON.stringify(trackedOrders));
+            }
+          } else {
+            if (banner) {
+              banner.style.background = '#FFEBEE';
+              banner.style.border = '1px solid #FFCDD2';
+              banner.style.color = '#C62828';
+              banner.innerHTML = '⚠️ <strong>Upgrade Verification Failed:</strong> We could not verify your payment status (Current Status: ' + (data.order_status || 'UNKNOWN') + '). If the amount was debited, please contact us on <a href="https://wa.me/919999999999?text=Hi, my payment verification failed for Order ID ' + orderId + '" style="color:#C62828;text-decoration:underline;font-weight:bold;" target="_blank">WhatsApp</a> with your Order ID (<code>' + orderId + '</code>) to manually unlock your guides.';
+            }
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          if (banner) {
+            banner.style.background = '#FFEBEE';
+            banner.style.border = '1px solid #FFCDD2';
+            banner.style.color = '#C62828';
+            banner.innerHTML = '⚠️ <strong>Error:</strong> An error occurred while verifying your upgrade status. Please contact support on WhatsApp.';
+          }
+        });
+    } else {
+      const isVip = localStorage.getItem('vip_purchased') === 'true';
+      const isTest = window.location.search.includes('test=true') || window.location.hostname === 'localhost';
+      
+      if (!isVip && !isTest) {
+        if (dlContainer) {
+          dlContainer.style.opacity = '0.2';
+          dlContainer.style.pointerEvents = 'none';
+        }
+        if (banner) {
+          banner.style.display = 'block';
+          banner.style.background = '#ECEFF1';
+          banner.style.border = '1px solid #CFD8DC';
+          banner.style.color = '#37474F';
+          banner.innerHTML = 'ℹ️ <strong>VIP Access Restricted:</strong> Confirm payment to view these downloads. If you purchased, please use the direct WhatsApp link.';
+        }
+      }
+    }
+  })();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,12 @@
+{
+  "name": "kids-funnel-cashfree",
+  "version": "1.0.0",
+  "description": "Kids Funnel Cashfree Integration Backend",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

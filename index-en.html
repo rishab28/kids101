@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Happy Tiffin System | 101 Picky-Eater Approved Indian Recipes</title>
+  <!-- Cashfree JS SDK v3 -->
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
   <meta name="description" content="Tired of school tiffins coming back full? Discover the 5-Minute Tiffin Trick that helps picky eaters enjoy healthy Indian food. Rs. 499 only." />
 
   <!-- Open Graph for Meta Ads -->
@@ -25,34 +27,23 @@
   
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '832552641809527');
-  fbq('track', 'PageView');
-  fbq('trackCustom', 'KidsIndexENPageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=832552641809527&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
-  </script>
-
-  <script>
-  if (typeof fbq === 'function') {
+  window.initializePixel = function() {
+    if (window.pixelInitialized) return;
+    window.pixelInitialized = true;
+    
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', '832552641809527');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'KidsIndexENPageView');
+    
     fbq('track', 'ViewContent', {
       content_name: 'Happy Tiffin System Landing Page EN',
       content_category: 'Parenting eBook',
@@ -60,8 +51,17 @@
       value: 499,
       currency: 'INR'
     });
+  };
+
+  // If already accepted cookie consent, initialize immediately
+  if (localStorage.getItem('cookieConsent') === 'accepted') {
+    window.initializePixel();
   }
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=832552641809527&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- 2026 Funnel Superpower: JSON-LD SEO Structured Data (Product & FAQPage) -->
   <script type="application/ld+json">
@@ -128,6 +128,13 @@
     ]
   }
   </script>
+  <style>
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
 
@@ -135,7 +142,7 @@
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
-  <div class="top-bar">
+  <div class="top-bar" id="topAlert">
     ⚡ BACK TO SCHOOL SALE: Get 92% OFF + 8 Free Bonuses today! Offer ends soon.
   </div>
 
@@ -147,12 +154,38 @@
           <div class="badge">🔥 Loved by Happy Indian Moms</div>
           
           <h1 class="hero-title">
-            Make your child <span class="highlight">finish their tiffin every single day</span> — without the morning kitchen drama.
+            Watch your picky eater <span class="highlight">bring back an empty tiffin box</span> tomorrow morning — without the 6 AM kitchen drama.
           </h1>
           
           <p class="hero-subtitle">
-            End the morning school lunchbox struggle forever. Get the complete picky-eater feeding system designed specifically for busy Indian families to make tiffins come back empty!
+            Stop guessing what to cook at 6:00 AM. Get the complete picky-eater feeding system designed specifically for busy Indian families to make tiffins come back empty!
           </p>
+
+          <!-- WEEKLY 5K LOTTERY PROMOTION -->
+          <div style="
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 1.5px solid rgba(245, 158, 11, 0.4);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+          ">
+            <div style="font-size: 2.2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">🍀</div>
+            <div style="flex: 1;">
+              <h4 style="color: #b45309; font-size: 0.95rem; font-weight: 800; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                🔥 Weekly Draw Active! 
+                <span style="font-size: 0.7rem; background: #e53935; color: #fff; padding: 2px 8px; border-radius: 20px; font-weight: 900; animation: blink 1.2s infinite; text-transform: uppercase; display: inline-block;">17 Slots Left!</span>
+              </h4>
+              <p style="color: var(--text-secondary); font-size: 0.82rem; margin: 0; line-height: 1.4;">
+                Get a <strong>Free Entry Ticket</strong> tonight to win (Your Choice): <strong>1. AGARO Multi Air Fryer, 2. NutriBullet Blender, 3. Premium Bento Box & Bottle Set, or 4. ₹5,000 Cash!</strong> <span id="index-winner-promo" style="color: var(--text-dark); font-weight: 700;">Loading last draw...</span>
+              </p>
+            </div>
+          </div>
 
           <!-- Key Benefit Bullets -->
           <div class="hero-benefits-grid">
@@ -179,8 +212,17 @@
             </div>
           </div>
 
+          <!-- Zero Exotic Ingredients Callout -->
+          <div class="exotic-ingredients-callout" style="background: rgba(76, 175, 80, 0.05); border: 1.5px dashed var(--secondary); padding: 15px; border-radius: var(--radius-md); margin: 20px 0; text-align: left; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-sm);">
+            <span style="font-size: 1.8rem; line-height: 1;">🛒</span>
+            <div>
+              <strong style="color: var(--secondary); font-size: 0.95rem; display: block; margin-bottom: 2px;">No Avocados. No Chia Seeds. No Expensive Flours.</strong>
+              <span style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: block;">Every recipe uses simple, everyday ingredients from your local Indian vegetable market or grocery store.</span>
+            </div>
+          </div>
+
           <div class="cta-block">
-            <a href="https://superprofile.bio/vp/FUIMWaYB" class="btn btn-primary btn-pulse" id="heroCTA">
+            <a href="https://superprofile.bio/vp/kids-101-recipes" class="btn btn-primary btn-pulse" id="heroCTA">
               Yes! I Want An Empty Tiffin Box Tomorrow →
             </a>
             <div class="trust-row">
@@ -199,10 +241,28 @@
             <img src="kids_tiffin_hero.webp" alt="Happy Kids Healthy Tiffin Box" class="hero-img" />
             <div class="floating-badge">
               <span class="fb-stars">★★★★★</span>
-              <span class="fb-text">"Empty Tiffin Box Guaranteed!"</span>
+              <span class="fb-text">"100% Risk-Free Tryout!"</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS ROW ==================== -->
+  <section style="background: var(--bg-card); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 30px 0;">
+    <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center;">
+      <div>
+        <h3 style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 0 0 5px 0; font-family: var(--font-heading);"><span class="counter-num">1420</span>+</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Smart Moms Joined</p>
+      </div>
+      <div>
+        <h3 style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 0 0 5px 0; font-family: var(--font-heading);"><span class="counter-num">10000</span>+</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Tiffins Emptied</p>
+      </div>
+      <div>
+        <h3 style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 0 0 5px 0; font-family: var(--font-heading);"><span class="counter-num">4.9</span>★</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Average Rating</p>
       </div>
     </div>
   </section>
@@ -263,85 +323,21 @@
     </div>
   </section>
 
-  <!-- ==================== 2.5 INTERACTIVE VEGGIE DEFICIT CALCULATOR ==================== -->
-  <section class="calculator-section" id="calculatorSection">
+  <!-- ==================== 3.5 MEET THE MOM (EPIPHANY BRIDGE) ==================== -->
+  <section class="story-section" id="storySection">
     <div class="container narrow">
-      <div class="section-header">
-        <span class="section-tag">Interactive Tool</span>
-        <h2 class="section-title">Calculate Your Child's Veggie Deficit</h2>
-        <p class="section-subtitle">Find out how much critical nutrition your child is missing due to picky eating patterns:</p>
-      </div>
-
-      <div class="calculator-container">
-        <!-- Inputs Column -->
-        <div class="calc-inputs-panel">
-          <h3 class="calculator-title">✏️ Enter Details:</h3>
-          
-          <div class="calc-group">
-            <label class="calc-label">Child's Age Group:</label>
-            <select class="calc-select" id="calcAge" onchange="calculateDeficit()">
-              <option value="2-4">2 to 4 years (Pre-schooler)</option>
-              <option value="5-8" selected>5 to 8 years (Early Schooler)</option>
-              <option value="9-12">9 to 12 years (Pre-teen)</option>
-            </select>
-          </div>
-
-          <div class="calc-group">
-            <label class="calc-label">Which healthy foods does your child refuse or avoid?</label>
-            <div class="veggie-grid">
-              <div class="veggie-item">
-                <input type="checkbox" id="vegPalak" value="20" checked onchange="calculateDeficit()" />
-                <label for="vegPalak">🥬 Green Veggies</label>
-              </div>
-              <div class="veggie-item">
-                <input type="checkbox" id="vegGajar" value="15" checked onchange="calculateDeficit()" />
-                <label for="vegGajar">🥕 Carrots/Gajar</label>
-              </div>
-              <div class="veggie-item">
-                <input type="checkbox" id="vegDal" value="15" checked onchange="calculateDeficit()" />
-                <label for="vegDal">🍲 Lentils/Dals</label>
-              </div>
-              <div class="veggie-item">
-                <input type="checkbox" id="vegPaneer" value="10" onchange="calculateDeficit()" />
-                <label for="vegPaneer">🥛 Dairy/Paneer</label>
-              </div>
-              <div class="veggie-item">
-                <input type="checkbox" id="vegSeb" value="15" onchange="calculateDeficit()" />
-                <label for="vegSeb">🍎 Fruits/Apples</label>
-              </div>
-              <div class="veggie-item">
-                <input type="checkbox" id="vegSalad" value="10" checked onchange="calculateDeficit()" />
-                <label for="vegSalad">🥗 Salad/Veg</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="calc-group">
-            <label class="calc-label">How often does their school tiffin return back full?</label>
-            <select class="calc-select" id="calcTiffin" onchange="calculateDeficit()">
-              <option value="always" selected>Always (Almost every day)</option>
-              <option value="frequent">Frequently (More than half the time)</option>
-              <option value="sometimes">Sometimes (Only on boring recipe days)</option>
-            </select>
+      <div class="story-card">
+        <div class="story-header" style="align-items: center;">
+          <img src="priya_portrait.png" alt="Priya - Creator of Happy Tiffin" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-right: 15px;" />
+          <div>
+            <h3>Meet Priya — The Mom Behind The Tricks</h3>
+            <p class="story-meta">Founder of The Happy Tiffin System</p>
           </div>
         </div>
-
-        <!-- Results Column -->
-        <div class="calc-results-panel">
-          <div class="gauge-wrapper">
-            <svg class="gauge-svg" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="40" class="gauge-bg" />
-              <circle cx="50" cy="50" r="40" class="gauge-fill" id="gaugeFill" />
-            </svg>
-            <div class="gauge-label" id="gaugeLabel">0%</div>
-          </div>
-
-          <div class="result-status" id="resultStatus">CRITICAL DEFICIT 🚨</div>
-          <p class="result-desc" id="resultDesc">Your child is missing out on crucial growth vitamins and fiber. Standard recipes need secret swaps and visual shape updates.</p>
-
-          <a href="#pricing" class="btn btn-primary btn-pulse plan-cta" style="font-size: 1rem; padding: 14px 28px;">
-            Get Custom Recipes To Fix Deficit →
-          </a>
+        <div class="story-body">
+          <p>Hi, I'm Priya. A year ago, I sat on my kitchen floor at 6:30 AM, staring at a plate of rejected school lunch, fighting back tears. My son Aarav brought back his school lunchbox untouched day after day. I felt like the worst mother in the world, unable to feed my own child healthy food. Every single day was a battle. I'd stand in front of the fridge exhausted, then spend an hour cooking, only to have him push the plate away and demand processed chips or chocolate biscuits. I felt this crushing weight of maternal guilt—wondering what his school teachers thought of me, and worrying that my child was missing out on critical nutrients during his growing years.</p>
+          <p>I tried banning processed junk, but that only made the morning tantrums louder. The breaking point came when Aarav’s class teacher called me to say he was feeling sluggish and unable to concentrate during class because he wasn't eating his lunch. That's when it hit me: <strong>the problem wasn't the food itself—it was the visual presentation and the lack of a smart swap system.</strong> Kids eat with their eyes first!</p>
+          <p>I spent months researching, testing, and experimenting in my kitchen. I started blending green veggies into chocolate pancakes, shaping ragi parathas into pinwheel rolls, and using dates instead of refined sugar. When Aarav ran back home from school that first afternoon and proudly showed me a 100% empty, clean tiffin box... I literally cried tears of relief. I built this system so that no other mother has to feel that heavy morning stress and silent guilt ever again ❤️</p>
         </div>
       </div>
     </div>
@@ -376,24 +372,86 @@
     </div>
   </section>
 
-  <!-- ==================== 3.5 MEET THE MOM (EPIPHANY BRIDGE) ==================== -->
-  <section class="story-section" id="storySection">
+  <!-- ==================== 2.5 INTERACTIVE PICKY EATING CALCULATOR ==================== -->
+  <section class="calculator-section" id="calculatorSection">
     <div class="container narrow">
-      <div class="story-card">
-        <div class="story-header">
-          <span class="story-avatar">👩‍🍳</span>
-          <div>
-            <h3>Meet Priya — The Mom Behind The Tricks</h3>
-            <p class="story-meta">Founder of The Happy Tiffin System</p>
+      <div class="section-header">
+        <span class="section-tag">Interactive Tool</span>
+        <h2 class="section-title">Check Your Child's Picky Eating Score</h2>
+        <p class="section-subtitle">Find out how your child's meal variety compares to recommended patterns:</p>
+      </div>
+
+      <div class="calculator-container">
+        <!-- Inputs Column -->
+        <div class="calc-inputs-panel">
+          <h3 class="calculator-title">✏️ Enter Details:</h3>
+          
+          <div class="calc-group">
+            <label class="calc-label">Child's Age Group:</label>
+            <select class="calc-select" id="calcAge" onchange="calculatePickyScore()">
+              <option value="2-4">2 to 4 years (Pre-schooler)</option>
+              <option value="5-8" selected>5 to 8 years (Early Schooler)</option>
+              <option value="9-12">9 to 12 years (Pre-teen)</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label">Which healthy foods does your child refuse or avoid?</label>
+            <div class="veggie-grid">
+              <div class="veggie-item">
+                <input type="checkbox" id="vegPalak" value="20" checked onchange="calculatePickyScore()" />
+                <label for="vegPalak">🥬 Green Veggies</label>
+              </div>
+              <div class="veggie-item">
+                <input type="checkbox" id="vegGajar" value="15" checked onchange="calculatePickyScore()" />
+                <label for="vegGajar">🥕 Carrots/Gajar</label>
+              </div>
+              <div class="veggie-item">
+                <input type="checkbox" id="vegDal" value="15" checked onchange="calculatePickyScore()" />
+                <label for="vegDal">🍲 Lentils/Dals</label>
+              </div>
+              <div class="veggie-item">
+                <input type="checkbox" id="vegPaneer" value="10" onchange="calculatePickyScore()" />
+                <label for="vegPaneer">🥛 Dairy/Paneer</label>
+              </div>
+              <div class="veggie-item">
+                <input type="checkbox" id="vegSeb" value="15" onchange="calculatePickyScore()" />
+                <label for="vegSeb">🍎 Fruits/Apples</label>
+              </div>
+              <div class="veggie-item">
+                <input type="checkbox" id="vegSalad" value="10" checked onchange="calculatePickyScore()" />
+                <label for="vegSalad">🥗 Salad/Veg</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label">How often does their school tiffin return back full?</label>
+            <select class="calc-select" id="calcTiffin" onchange="calculatePickyScore()">
+              <option value="always" selected>Always (Almost every day)</option>
+              <option value="frequent">Frequently (More than half the time)</option>
+              <option value="sometimes">Sometimes (Only on boring recipe days)</option>
+            </select>
           </div>
         </div>
-        <div class="story-body">
-          <p>Hi, I'm Priya. A year ago, I sat on my kitchen floor at 6:30 AM, staring at a plate of rejected school lunch, fighting back tears. My son Aarav brought back his school lunchbox untouched day after day. I felt like the worst mother in the world, unable to feed my own child healthy food.</p>
-          <p>I banned the processed canteens and packaged chips, but when I served normal home-cooked meals, the tantrums got worse. That’s when it hit me: <strong>The problem wasn't the food itself—it was the visual boredom and lack of a smart presentation mechanism.</strong></p>
-          <p>I began experimenting with the 'Swap, Shape, Sneak' framework. The first afternoon Aarav ran back home and proudly showed me a 100% empty tiffin box, I literally cried. I built this system so no other mother has to feel that silent morning guilt ever again ❤️</p>
-          <p class="khadufarm-bridge">
-            <strong>🌱 A Note on Purity:</strong> These recipes only work if your ingredients are completely pure. When I discovered that market apples are coated in toxic petroleum wax, I switched to sourcing fresh, wax-free Himalayan fruits directly from my family orchard, <strong>KhaduFarm</strong>. No compromises when it comes to children's health!
-          </p>
+
+        <!-- Results Column -->
+        <div class="calc-results-panel">
+          <div class="gauge-wrapper">
+            <svg class="gauge-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="gauge-bg" />
+              <circle cx="50" cy="50" r="40" class="gauge-fill" id="gaugeFill" />
+            </svg>
+            <div class="gauge-label" id="gaugeLabel">0%</div>
+          </div>
+
+          <div class="result-status" id="resultStatus">CHECKING...</div>
+          <p class="result-desc" id="resultDesc">Enter details to see your score.</p>
+
+          <a href="#pricing" class="btn btn-primary btn-pulse plan-cta" id="calcCTA" style="font-size: 1rem; padding: 14px 28px;">
+            Get Custom Recipe Swaps →
+          </a>
+          <p id="calcCTASubtext" style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 8px; min-height: 18px; line-height: 1.4;"></p>
         </div>
       </div>
     </div>
@@ -448,105 +506,145 @@
       </div>
 
       <div class="offer-layout">
-        <div class="offer-mockup">
-          <img src="kids_ebook_mockup.webp" alt="Happy Tiffin System E-book Mockup" class="mockup-img" />
-        </div>
-
         <div class="stack-list">
           <!-- Core Item -->
           <div class="stack-item core" style="align-items: flex-start;">
             <span class="stack-icon">📘</span>
             <div class="stack-desc">
               <h4>[Core] The Happy Tiffin Recipe System (101 Recipes)</h4>
-              <p>A digital cookbook of breakfast, school tiffins, and healthy snacks. Every recipe has these secret fascinations inside:</p>
+              <p>A complete digital vault of breakfast, school tiffins, and healthy snacks. Every recipe has just 3 steps and a photo — pick, pack, done in 5-10 minutes:</p>
               <ul style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 10px; margin-left: 20px; line-height: 1.6; list-style-type: disc; text-align: left;">
-                <li>The secret chocolate pancake swap that hides veggies completely (Your child will never guess there's a vegetable inside!)</li>
-                <li>The #1 'healthy' lunchbox ingredient that actually makes kids feel sluggish and irritable during school hours.</li>
-                <li>The 2-second presentation shape trick that makes boring flatbreads look more exciting than pizza.</li>
+                <li>The secret chocolate pancake swap that hides spinach completely — your child will ask for a second serving.</li>
+                <li>The #1 'healthy' lunchbox ingredient that makes kids feel sluggish and irritable by 2nd period.</li>
+                <li>The 2-second shape trick that makes a plain roti look more fun than pizza.</li>
               </ul>
             </div>
             <span class="stack-value">₹3,999 VALUE</span>
           </div>
-          <!-- Item 2 -->
-          <div class="stack-item bonus">
-            <span class="stack-icon">🍱</span>
-            <div class="stack-desc">
-              <h4>[Bonus #1] School Tiffin Success System</h4>
-              <p>Tested tiffin recipes and packing systems. Make sure your child's lunchbox comes back completely empty every day!</p>
-              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills the belief: "My child always brings the lunchbox back untouched."</p>
-            </div>
-            <span class="stack-tag-free">₹1,499 VALUE (FREE)</span>
-          </div>
-          <!-- Item 3 -->
-          <div class="stack-item bonus">
-            <span class="stack-icon">🥬</span>
-            <div class="stack-desc">
-              <h4>[Bonus #2] Hidden Protein Cheat Sheet</h4>
-              <p>15 clever veggie-stealth and protein hiding hacks (paneer, tofu, lentils, seeds) in regular everyday meals.</p>
-              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills the belief: "My child doesn't get enough protein and hates eating high-protein foods."</p>
-            </div>
-            <span class="stack-tag-free">₹899 VALUE (FREE)</span>
-          </div>
-          <!-- Item 4 -->
-          <div class="stack-item bonus">
-            <span class="stack-icon">🥛</span>
-            <div class="stack-desc">
-              <h4>[Bonus #3] "White Food Kid" Survival Guide</h4>
-              <p>Psychology-backed feeding guides for kids who only eat white/beige foods (plain rice, pasta, bread, milk) to introduce colors and nutrition.</p>
-              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills the belief: "My kid is too stubborn and will never eat colored vegetables."</p>
-            </div>
-            <span class="stack-tag-free">₹799 VALUE (FREE)</span>
-          </div>
-          <!-- Item 5 -->
+
+          <!-- Bonus 1 -->
           <div class="stack-item bonus">
             <span class="stack-icon">⏱️</span>
             <div class="stack-desc">
-              <h4>[Bonus #4] Emergency 5-Minute Breakfast Survival Guide</h4>
-              <p>Quick breakfast combinations that take under 5 minutes to prep and serve for hectic mornings.</p>
-              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills the belief: "I have no time to cook healthy meals in the morning."</p>
+              <h4>[Bonus #1] Emergency 5-Minute Breakfast Guide</h4>
+              <p>20 ultra-fast healthy breakfast combinations that take under 5 minutes — even on the most chaotic school mornings.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "I have zero time to cook healthy food in the morning."</p>
             </div>
-            <span class="stack-tag-free">₹799 VALUE (FREE)</span>
+            <span class="stack-tag-free">₹1,499 VALUE (FREE)</span>
           </div>
-          <!-- Item 6 -->
+
+          <!-- Bonus 2 -->
+          <div class="stack-item bonus">
+            <span class="stack-icon">🍱</span>
+            <div class="stack-desc">
+              <h4>[Bonus #2] School Tiffin Success System</h4>
+              <p>Tested lunchbox formulas built around the "empty tiffin guarantee" — recipes specifically designed so your child eats everything before the school bell rings.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "My kid always brings the tiffin back untouched, no matter what I pack."</p>
+            </div>
+            <span class="stack-tag-free">₹1,299 VALUE (FREE)</span>
+          </div>
+
+          <!-- Bonus 3 -->
           <div class="stack-item bonus">
             <span class="stack-icon">📅</span>
             <div class="stack-desc">
-              <h4>[Bonus #5] 7-Day Breakfast & Tiffin Rotation Planner</h4>
-              <p>Eliminate decision fatigue! Use this planner to create a rotating list of healthy items without ever repeating.</p>
+              <h4>[Bonus #3] 7-Day Breakfast & Tiffin Rotation Planner</h4>
+              <p>A done-for-you weekly calendar so you never stare at the fridge at 6 AM wondering what to pack. No repeats, zero decision fatigue — just open and cook.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "I run out of ideas and end up giving the same boring food every day."</p>
             </div>
-            <span class="stack-tag-free">₹699 VALUE (FREE)</span>
+            <span class="stack-tag-free">₹799 VALUE (FREE)</span>
           </div>
-          <!-- Item 7 -->
+
+          <!-- Bonus 4 -->
+          <div class="stack-item bonus">
+            <span class="stack-icon">🥛</span>
+            <div class="stack-desc">
+              <h4>[Bonus #4] "White Food Kid" Survival Guide</h4>
+              <p>Psychology-backed feeding guides for kids who only eat plain white foods (rice, bread, milk, pasta). Step-by-step sensory exposure plan to gradually introduce color and nutrients without a single tantrum.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "My kid is too stubborn and will NEVER eat any vegetable."</p>
+            </div>
+            <span class="stack-tag-free">₹1,299 VALUE (FREE)</span>
+          </div>
+
+          <!-- Bonus 5 -->
+          <div class="stack-item bonus">
+            <span class="stack-icon">🥬</span>
+            <div class="stack-desc">
+              <h4>[Bonus #5] Hidden Veggie & Protein Stealth Cheat Sheet</h4>
+              <p>15 proven methods to hide spinach, carrot, lauki, paneer, and dal into everyday meals — your kids will eat them without suspecting a thing. Includes exact hiding ratios so they can't detect the taste.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "My kid can spot and reject any vegetable hidden in food."</p>
+            </div>
+            <span class="stack-tag-free">₹799 VALUE (FREE)</span>
+          </div>
+
+          <!-- Bonus 6 -->
           <div class="stack-item bonus">
             <span class="stack-icon">📈</span>
             <div class="stack-desc">
               <h4>[Bonus #6] Picky Eater Progress Tracker</h4>
-              <p>A simple tracker sheet to measure and record your child's progress as they gradually accept new healthy food groups.</p>
+              <p>A simple gamified weekly tracking sheet that logs your child's food wins, new foods tried, and acceptance patterns. Gives you hard proof that the system is working — even when change feels slow.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "How do I even know if this is working? I can't see any progress."</p>
             </div>
             <span class="stack-tag-free">₹599 VALUE (FREE)</span>
           </div>
-          <!-- Item 8 -->
+
+          <!-- Bonus 7 -->
           <div class="stack-item bonus">
             <span class="stack-icon">🛒</span>
             <div class="stack-desc">
               <h4>[Bonus #7] Indian Protein Pantry Checklist</h4>
-              <p>Identify and purchase high-quality natural protein ingredients from your local market easily.</p>
+              <p>A one-page shopping guide listing the top 30 high-protein Indian pantry ingredients available at any local kirana or sabzi mandi. No supermarket hunting, no expensive imports — just affordable nutrition.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "Healthy eating is only possible with expensive, imported ingredients."</p>
+            </div>
+            <span class="stack-tag-free">₹699 VALUE (FREE)</span>
+          </div>
+
+          <!-- Bonus 8 -->
+          <div class="stack-item bonus">
+            <span class="stack-icon">🧃</span>
+            <div class="stack-desc">
+              <h4>[Bonus #8] Immunity Booster Drinks & Soups Guide</h4>
+              <p>15 quick drink and soup recipes loaded with hidden immunity boosters — that taste like regular milkshakes and soups to kids. Perfect for sick days, season changes, and post-school recovery.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "My child falls sick every month and I don't know how to boost their immunity naturally."</p>
             </div>
             <span class="stack-tag-free">₹999 VALUE (FREE)</span>
           </div>
-          <!-- Item 9 -->
+
+          <!-- Bonus 9 -->
+          <div class="stack-item bonus">
+            <span class="stack-icon">🔍</span>
+            <div class="stack-desc">
+              <h4>[Bonus #9] Packaging Chemical Scanner Checklist</h4>
+              <p>A pocket-sized guide to spot 12 hidden harmful names on food labels — disguised sugars, artificial colorings, and chemical preservatives in "healthy" kids snacks and biscuits you're probably buying right now.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "The biscuits and snacks I buy at the store say 'healthy for kids' so they must be fine."</p>
+            </div>
+            <span class="stack-tag-free">₹799 VALUE (FREE)</span>
+          </div>
+
+          <!-- Bonus 10 -->
           <div class="stack-item bonus">
             <span class="stack-icon">💬</span>
             <div class="stack-desc">
-              <h4>[Bonus #8] VIP Smart Moms WhatsApp Group</h4>
-              <p>Join other health-conscious mothers to share lunchbox pics, quick daily swaps, and parenting hacks.</p>
+              <h4>[Bonus #10] VIP Smart Moms WhatsApp Community</h4>
+              <p>Join 2,000+ Indian mothers sharing daily lunchbox photos, real-time recipe swaps, and morning hacks. Post your tiffin, get instant ideas from moms who've already solved the same problem as you.</p>
+              <p class="bonus-belief" style="font-size: 0.85rem; font-weight: bold; color: #E53935; margin-top: 8px; display: inline-block; background: rgba(229,57,53,0.06); padding: 4px 8px; border-radius: 4px;">🎯 Kills: "I feel alone in this — no one around me understands what it's like to deal with a picky eater."</p>
             </div>
             <span class="stack-tag-free">₹999 VALUE (FREE)</span>
           </div>
         </div>
+        
+        <!-- Total Value Summation Box -->
+        <div style="background: rgba(255, 112, 32, 0.05); border: 2.5px solid var(--primary); border-radius: var(--radius-lg); padding: 25px; margin: 30px auto 0 auto; text-align: center; max-width: 500px; box-shadow: var(--shadow-md);">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 5px;">Core Book + All 10 Bonuses Value</span>
+          <span style="font-size: 1.8rem; text-decoration: line-through; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 5px;">Total Value: ₹13,890</span>
+          <span style="font-size: 2.2rem; color: var(--primary); font-family: var(--font-heading); font-weight: 900; display: block; margin-bottom: 8px;">GET IT TODAY FOR JUST ₹499!</span>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; margin: 0 0 18px 0;">(Saving a massive 96% today! Price returns to ₹1,299 soon)</p>
+          <a href="#pricing" class="btn btn-primary btn-pulse plan-cta" style="font-size: 0.95rem; padding: 12px 24px; margin: 0 auto; display: inline-block; width: 100%; max-width: 320px;">Get The Complete Bundle →</a>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- ==================== 6. HIGH-FIDELITY WHATSAPP PROOF ==================== -->
   <section class="social-proof" id="socialProof">
@@ -562,7 +660,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Neha (Delhi)</div>
           <div class="chat-text">
-            Priya, Aarav finished his entire tiffin today! The box was completely empty... The Spinach Chocolate Pancake recipe is magic, he couldn't guess there was spinach inside! Thank you so much 🙏
+            Priya, literally crying tears of joy today! Aarav finished his entire lunchbox for the first time. Spinach wale chocolate pancakes pack kiye the, he had no idea there was spinach inside! Thank you so much! 😭❤️
           </div>
           <div class="chat-meta">1:15 PM ✓✓</div>
         </div>
@@ -571,7 +669,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Priya (Jaipur)</div>
           <div class="chat-text">
-            My daughter used to cry when she saw carrots. Today I packed the rainbow pinwheel sandwich, she thought it was a pizza roll and finished it all. Her school teachers also asked where I got the recipe! Super happy mom 😊
+            My daughter used to cry when she saw carrots. Packaged the rainbow pinwheel sandwich today—she thought it was a fancy pizza roll and finished everything! Even the school teacher asked her where we got this roll! Super happy mom 😊
           </div>
           <div class="chat-meta">2:45 PM ✓✓</div>
         </div>
@@ -580,7 +678,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Sonal (Mumbai)</div>
           <div class="chat-text">
-            My decision fatigue is completely gone thanks to the tiffin calendar. Morning schedules have become so smooth. The rushed morning guide is a lifesaver. Highly recommended to all moms!
+            Every morning Aarav used to leave the box untouched and class teacher complained. Today he ate the whole Oats Suji Chilla! The 5-min prep tricks are a lifesaver. Saved me so much morning panic.
           </div>
           <div class="chat-meta">4:10 PM ✓✓</div>
         </div>
@@ -589,7 +687,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Megha (Bangalore)</div>
           <div class="chat-text">
-            Priya, this swap framework is awesome! Today I secretly mixed veggies in his wrap. My son happily ate it thinking it was a pizza roll, he had no idea there were hidden greens inside! Thank you so much ❤️
+            Priya, this swap framework is magic. Secretly mixed veggies in his cheese wrap today. He happily ate it thinking it was a restaurant pizza roll, had no idea there were greens inside! So relieved! 🙏
           </div>
           <div class="chat-meta">4:50 PM ✓✓</div>
         </div>
@@ -598,7 +696,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Shalini (Gurugram)</div>
           <div class="chat-text">
-            My 4-year-old was a massive potato lover and rejected all greens. Your 'Veggie Stealth' hacks worked wonders. I hid bottle gourd inside beetroot patties yesterday. Clean sweep! She didn't find out at all. Game changer.
+            My 4-year-old was a massive potato lover and rejected all greens. Tried the beetroot patties hack yesterday—clean sweep! She didn't detect the hidden bottle gourd at all. Complete game changer.
           </div>
           <div class="chat-meta">5:30 PM ✓✓</div>
         </div>
@@ -607,7 +705,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Divya (Chandigarh)</div>
           <div class="chat-text">
-            Priya, today I made the Day 5 recipe from the tiffin calendar (Oats Suji Chilla with color shape trick). My daughter finished it completely for the first time! Usually she returns half the tiffin back. So relieved!
+            Made the Oats Suji Chilla today. My daughter finished it completely! Usually half tiffin wapas aata tha. So relieved! The calendar makes it so easy, decision fatigue is hamesha ke liye gone.
           </div>
           <div class="chat-meta">6:12 PM ✓✓</div>
         </div>
@@ -616,7 +714,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Pooja (Noida)</div>
           <div class="chat-text">
-            Morning rushed time is saved. The 5-Minute Breakfast Guide is so fast. My husband and kid both ate the same banana ragi pancake today. Saved me from cooking separate meals. Thank you!
+            Morning rushed time saved! The 5-Minute Breakfast Guide is so fast. My husband and kid both ate the same banana ragi pancake today. Saved me from cooking separate meals. Thank you!
           </div>
           <div class="chat-meta">7:25 PM ✓✓</div>
         </div>
@@ -625,7 +723,7 @@
         <div class="chat-bubble received">
           <div class="chat-name">Kiran (Ahmedabad)</div>
           <div class="chat-text">
-            The Packaging chemical scanner checklist is an eye-opener. I threw away 3 store-bought 'healthy' kids biscuits today after seeing the hidden sugar names. Switched to home-baked cookies from the vault.
+            The chemical scanner checklist is a real eye-opener. Threw away 3 store-bought 'healthy' kids biscuits today after seeing the hidden sugars. Switched to home-baked cookies from the vault. Thank you Priya!
           </div>
           <div class="chat-meta">8:40 PM ✓✓</div>
         </div>
@@ -639,7 +737,7 @@
       <div class="section-header" style="text-align: center; margin-bottom: 40px;">
         <span class="section-tag" style="justify-content: center;">Why We Are Different</span>
         <h2 class="section-title">This Isn't Just Another Recipe Book</h2>
-        <p class="section-subtitle">See why the KhaduFarm Happy Tiffin System is completely different from ordinary recipe books and PDFs:</p>
+        <p class="section-subtitle">See why the Happy Tiffin System is completely different from ordinary recipe books and PDFs:</p>
       </div>
 
       <div class="compare-container">
@@ -700,6 +798,78 @@
     </div>
   </section>
 
+  <!-- ==================== WHO THIS IS FOR / NOT FOR ==================== -->
+  <section class="qualification-section" style="padding: 70px 0; background: white; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container narrow" style="max-width: 800px;">
+      <div class="section-header text-center" style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag" style="justify-content: center;">Checklist</span>
+        <h2 class="section-title">Is This System For You?</h2>
+        <p class="section-subtitle">Priya's swap strategies are highly effective, but check if this bundle matches your daily needs:</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+        <!-- IS FOR -->
+        <div style="background: rgba(76, 175, 80, 0.03); border: 1.5px solid rgba(76, 175, 80, 0.15); border-radius: var(--radius-lg); padding: 30px;">
+          <h3 style="color: #2E7D32; font-size: 1.15rem; font-weight: 800; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <span>✅</span> This Bundle IS For You If:
+          </h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <li>✓ You are tired of daily morning arguments over unfinished school tiffin boxes.</li>
+            <li>✓ You want to feed your child healthy nutrients and greens without constant struggles.</li>
+            <li>✓ You need simple recipes that take less than 10 minutes to prepare in the morning.</li>
+            <li>✓ You prefer using standard, local Indian pantry ingredients rather than expensive exotic ones.</li>
+          </ul>
+        </div>
+        
+        <!-- IS NOT FOR -->
+        <div style="background: rgba(229, 57, 53, 0.03); border: 1.5px solid rgba(229, 57, 53, 0.15); border-radius: var(--radius-lg); padding: 30px;">
+          <h3 style="color: #C62828; font-size: 1.15rem; font-weight: 800; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <span>❌</span> This Bundle IS NOT For You If:
+          </h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+            <li>✕ You have the extra time and budget to shop for complicated, exotic Western ingredients.</li>
+            <li>✕ Your child happily eats all vegetables and rotis without any picky habits.</li>
+            <li>✕ You need deep medical plans for chronic disease therapy (This system focuses strictly on healthy school meals and swaps).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOTTERY BANNER ABOVE PRICING ==================== -->
+  <section style="padding: 30px 0 0; background: #FFFDF8;">
+    <div class="container narrow">
+      <div style="
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(255, 112, 32, 0.08) 100%);
+        border: 2px solid rgba(245, 158, 11, 0.5);
+        border-radius: 16px;
+        padding: 22px 28px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 8px 32px rgba(245, 158, 11, 0.12);
+        position: relative;
+        overflow: hidden;
+      ">
+        <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(245,158,11,0.18) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="font-size: 3rem; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15)); flex-shrink:0;">🍀</div>
+        <div style="flex: 1;">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
+            <h4 style="color: #92400e; font-size: 1.05rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">🔏 Weekly Lucky Draw — Active Now!</h4>
+            <span style="font-size: 0.7rem; background: #e53935; color: #fff; padding: 3px 10px; border-radius: 20px; font-weight: 900; animation: blink 1.2s infinite; text-transform: uppercase;">LIVE DRAW</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.5;">
+            <strong>Today's order = 1 Free Entry!</strong> Win this week: <strong>1) AGARO Multi Air Fryer &nbsp;|&nbsp; 2) NutriBullet Blender &nbsp;|&nbsp; 3) Premium Bento Box Set &nbsp;|&nbsp; 4) ₹5,000 Cash</strong> — <span id="pricing-winner-promo" style="color: var(--text-dark); font-weight: 700;">Loading...</span>
+          </p>
+        </div>
+        <div style="text-align:center; flex-shrink:0;">
+          <div style="font-size: 1.5rem; font-weight: 900; color: #b45309; font-family: var(--font-heading); line-height: 1;">FREE</div>
+          <div style="font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">With Purchase</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== 7. PRICING & VALUE COMPARISON ==================== -->
   <section class="pricing" id="pricing">
     <div class="container narrow">
@@ -707,6 +877,20 @@
         <span class="pc-badge">Best Seller Bundle</span>
         <h3 class="card-title">🍱 THE HAPPY TIFFIN BUNDLE</h3>
         <p class="card-subtitle">Lifetime Access & Digital Downloads</p>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdown" id="mainCountdown" style="margin-top: 15px; margin-bottom: 25px;">
+          <div class="cd-box"><div class="n" id="cdDays">00</div><div class="l">Days</div></div>
+          <div class="cd-box"><div class="n" id="cdHours">00</div><div class="l">Hours</div></div>
+          <div class="cd-box"><div class="n" id="cdMin">00</div><div class="l">Mins</div></div>
+          <div class="cd-box"><div class="n" id="cdSec">00</div><div class="l">Secs</div></div>
+        </div>
+
+        <!-- Stock Scarcity Alert -->
+        <div style="background: rgba(229, 57, 53, 0.08); border: 1px solid rgba(229, 57, 53, 0.2); border-radius: 8px; padding: 12px; margin-bottom: 20px; font-size: 0.85rem; color: #D32F2F; text-align: left; display: flex; align-items: center; gap: 10px; font-weight: bold; font-family: var(--font-body);">
+          <span>⚠️</span>
+          <span>LIMIT: Only 9 Happy Tiffin Bundles left tonight at this special ₹499 price! Price returns to ₹1,299 once remaining slots are filled.</span>
+        </div>
 
         <!-- Price Comparison Table -->
         <div class="price-comparison">
@@ -754,17 +938,13 @@
         </div>
 
         <div class="cta-container" style="margin: 0 auto; max-width: 100%;">
-          <a href="https://superprofile.bio/vp/FUIMWaYB" class="btn btn-primary btn-lg btn-pulse plan-cta">
+          <a href="https://superprofile.bio/vp/kids-101-recipes" class="btn btn-primary btn-lg btn-pulse plan-cta">
             Yes! Solve My Morning Tiffin Stress for ₹499 →
           </a>
           <p class="checkout-trust" style="margin-bottom: 2px;">🔒 100% Safe UPI, Paytm & Cards Checkout</p>
           <div style="font-size: 0.65rem; color: var(--text-muted); text-align: center; margin-top: 4px;">
             By proceeding, you agree to our terms & privacy policy in compliance with the Indian DPDP Act 2023.
           </div>
-          <!-- 2026 Funnel Superpower: Direct WhatsApp Order Link -->
-          <a href="https://wa.me/918800123456?text=Hi%20Priya,%20I%20want%20to%20order%20the%20Happy%20Tiffin%20Bundle%20for%20Rs.499.%20Please%20send%20UPI%20details." class="wa-order-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 6px;"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.559 7.93-7.93a7.897 7.897 0 0 0-2.327-5.615zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.86c-.2-.1-1.185-.584-1.37-.652-.185-.067-.32-.1-.454.1-.134.2-.52.652-.637.787-.117.135-.235.15-.435.05-.2-.1-.84-.31-1.598-.985-.59-.525-.985-1.175-1.1-1.372-.117-.197-.013-.304.087-.403.09-.09.2-.23.3-.346.1-.115.133-.197.2-.33.067-.133.033-.25-.017-.35-.05-.1-.454-1.096-.622-1.5-.163-.393-.343-.34-.454-.346-.11-.006-.235-.006-.36-.006a.719.719 0 0 0-.52.24c-.18.2-0.69.674-0.69 1.642 0 .968.705 1.902.803 2.035.1.133 1.386 2.116 3.357 2.967.469.203.835.324 1.12.415.47.15.897.129 1.235.078.377-.058 1.185-.484 1.352-.927.168-.444.168-.824.118-.927-.05-.1-.197-.15-.397-.25z"/></svg> Order Directly on WhatsApp (Pay via UPI)
-          </a>
         </div>
         </div>
       </div>
@@ -787,7 +967,7 @@
             <span class="acc-icon">+</span>
           </div>
           <div class="accordion-content">
-            <p>Yes, absolutely! We use zero exotic ingredients. Everything is a standard Indian kitchen item that you can buy at your local vegetable market.</p>
+            <p>Yes, absolutely! We use zero exotic ingredients. Everything is a standard Indian kitchen item that you can buy at your local vegetable market or grocery store.</p>
           </div>
         </div>
 
@@ -820,6 +1000,76 @@
             <p>Yes, that is exactly what our 'Sneak' framework is built for. We show you how to hide vegetables like spinach, carrots, and beetroot inside foods kids love (sandwiches, wraps, pasta) so they consume them without even knowing!</p>
           </div>
         </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ Is this a physical book or a digital download?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>This is an instant digital download package (interactive PDFs). You do not have to wait days for shipping. You get lifetime access immediately on your phone, tablet, or laptop so you can easily reference them while cooking in the kitchen.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ I am a busy working mother with very little time in the morning. Will this help me?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes, absolutely! Most of our recipes take less than 15-20 minutes to prepare. We also include pre-prep tips so you can do 5 minutes of prep the night before and cook hassle-free in the morning rush. Plus, you get the "Emergency 5-Minute Breakfast Survival Guide" for those extra-busy mornings.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ What age group of children is this suitable for?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>It is perfect for kids aged 2 to 12 years. The recipes are designed to match the taste buds of growing children while providing the essential nutrition (protein, vitamins) they need at this age.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ What if my child detects the hidden vegetables and refuses to eat?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Don't worry! Our 'Sneak' and 'Shape' framework uses clever culinary tricks to naturally blend vegetables into the texture of the food. If they are extremely picky, use the "White Food Kid Survival Guide" included in the bundle. And if it still doesn't work, you are fully covered by our 7-Day Refund Guarantee.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ Can I print these recipe books?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes, absolutely! The PDFs are high-resolution and beautifully designed. You can print them out, bind them, and keep them on your kitchen counter if you prefer physical books.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ What if I lose my download link or my phone gets reset?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>You have lifetime access. Since we send the link via both Email and WhatsApp, it will always be there in your chat history or inbox. If you still can't find it, just contact our support team and we will instantly resend it to you.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>❓ How does the 7-day refund guarantee work?</span>
+            <span class="acc-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>It is extremely simple. If your child doesn't start bringing home an empty tiffin within 7 days, just send us a WhatsApp message or email. We will refund 100% of your money immediately. No questions asked, no awkward calls, and you get to keep the books anyway.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -834,17 +1084,12 @@
       <p><strong>Priya</strong><br><span style="font-size: 0.85rem; color: var(--text-muted);">Creator, The Happy Tiffin</span></p>
       
       <div style="text-align: center; margin-top: 40px;">
-        <a href="https://superprofile.bio/vp/FUIMWaYB" class="btn btn-primary btn-pulse plan-cta" style="width: 100%; max-width: 400px; margin-bottom: 8px;">
+        <a href="https://superprofile.bio/vp/kids-101-recipes" class="btn btn-primary btn-pulse plan-cta" style="width: 100%; max-width: 400px; margin-bottom: 8px;">
           Yes! Solve My Morning Tiffin Stress for ₹499 →
         </a>
         <p class="checkout-trust" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; margin-bottom: 2px;">🔒 100% Safe UPI, Paytm & Cards Checkout</p>
         <div style="font-size: 0.65rem; color: var(--text-muted); text-align: center; margin-top: 4px;">
           By proceeding, you agree to our terms & privacy policy in compliance with the Indian DPDP Act 2023.
-        </div>
-        <!-- 2026 Funnel Superpower: Bottom WhatsApp Order Link -->
-        <a href="https://wa.me/918800123456?text=Hi%20Priya,%20I%20want%20to%20order%20the%20Happy%20Tiffin%20Bundle%20for%20Rs.499.%20Please%20send%20UPI%20details." class="wa-order-btn" style="max-width: 400px;" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 6px;"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.907h.004c4.368 0 7.926-3.559 7.93-7.93a7.897 7.897 0 0 0-2.327-5.615zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.86c-.2-.1-1.185-.584-1.37-.652-.185-.067-.32-.1-.454.1-.134.2-.52.652-.637.787-.117.135-.235.15-.435.05-.2-.1-.84-.31-1.598-.985-.59-.525-.985-1.175-1.1-1.372-.117-.197-.013-.304.087-.403.09-.09.2-.23.3-.346.1-.115.133-.197.2-.33.067-.133.033-.25-.017-.35-.05-.1-.454-1.096-.622-1.5-.163-.393-.343-.34-.454-.346-.11-.006-.235-.006-.36-.006a.719.719 0 0 0-.52.24c-.18.2-0.69.674-0.69 1.642 0 .968.705 1.902.803 2.035.1.133 1.386 2.116 3.357 2.967.469.203.835.324 1.12.415.47.15.897.129 1.235.078.377-.058 1.185-.484 1.352-.927.168-.444.168-.824.118-.927-.05-.1-.197-.15-.397-.25z"/></svg> Order Directly on WhatsApp (Pay via UPI)
-        </a>
       </div>
     </div>
   </div>
@@ -857,7 +1102,10 @@
         <a href="privacy.html">Privacy Policy</a> | 
         <a href="terms.html">Terms & Conditions</a>
       </div>
-      <div class="footer-disclaimer" style="font-size: 0.72rem; color: #C0B7B1; margin-top: 30px; line-height: 1.5; text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+      <div class="footer-contact" style="font-size: 0.82rem; color: #A89E97; margin-top: 10px; text-align: center;">
+        For support, questions, or refunds, contact us at: <a href="mailto:secretswapvault@gmail.com" style="color: #A89E97; text-decoration: underline;">secretswapvault@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer" style="font-size: 0.82rem; color: #A89E97; margin-top: 30px; line-height: 1.5; text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
         <p><strong>Disclaimer:</strong> This website (The Happy Tiffin) is not affiliated with Facebook, Instagram, or Meta Platforms, Inc. in any way. The testimonies and chat feedback shared are based on individual experiences of mothers and we do not guarantee similar results for every child. All nutritional recipes and swaps are developed based on home-cooking practices and general child health information, and are not intended to replace professional pediatric or medical advice. Always consult your pediatrician if your child has specific allergies, medical conditions, or eating disorders.</p>
       </div>
     </div>
@@ -1036,71 +1284,30 @@
       }
     })();
 
-    // 2026 Funnel Superpower: Simulated Social Proof Glassmorphic Toast alerts
-    (function() {
-      const locations = ['Delhi', 'Mumbai', 'Bangalore', 'Gurugram', 'Noida', 'Pune', 'Hyderabad', 'Jaipur', 'Ahmedabad', 'Chandigarh', 'Kolkata', 'Chennai', 'Indore', 'Bhopal', 'Lucknow'];
-      const names = ['Neha', 'Priya', 'Sonal', 'Megha', 'Shalini', 'Divya', 'Pooja', 'Kiran', 'Ananya', 'Ritu', 'Swati', 'Kavita', 'Aditi', 'Jyoti', 'Preeti'];
-      const actions = [
-        'just claimed their 50% discount! 🎁',
-        'just ordered the Happy Tiffin Bundle! 🍱',
-        'joined the VIP WhatsApp Group! 💬',
-        'unlocked the Picky Eater Progress Tracker! 📈'
-      ];
-      const icons = ['🔥', '🍱', '💬', '📈', '🎁', '🥬'];
-
-      function showRandomToast() {
-        const toast = document.getElementById('socialProofToast');
-        if (!toast) return;
-
-        const name = names[Math.floor(Math.random() * names.length)];
-        const loc = locations[Math.floor(Math.random() * locations.length)];
-        const action = actions[Math.floor(Math.random() * actions.length)];
-        const icon = icons[Math.floor(Math.random() * icons.length)];
-        const randomTime = Math.floor(Math.random() * 45) + 5; // 5 to 50 seconds ago
-
-        toast.innerHTML = `
-          <span class="social-proof-icon">${icon}</span>
-          <div class="social-proof-text">
-            <strong>${name} (${loc})</strong> ${action}
-            <span class="social-proof-time">${randomTime} seconds ago</span>
-          </div>
-        `;
-        
-        toast.classList.add('visible');
-
-        // Hide after 6 seconds
-        setTimeout(() => {
-          toast.classList.remove('visible');
-        }, 6000);
-      }
-
-      // Initial trigger after 4 seconds
-      setTimeout(showRandomToast, 4000);
-
-      // Repeat every 25-35 seconds
-      setInterval(() => {
-        // Only trigger if modal backdrop is not active to prevent UI overlap
-        const backdrop = document.getElementById('leadBackdrop');
-        if (backdrop && backdrop.classList.contains('active')) return;
-        showRandomToast();
-      }, Math.floor(Math.random() * 10000) + 25000);
-    })();
   </script>
 
-  <!-- 2026 Funnel Superpower: Social Proof Toast Container -->
-  <div id="socialProofToast" class="social-proof-toast"></div>
-
 <!-- Cookie & Consent Banner -->
-<div id="consentBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: white; padding: 15px; text-align: center; font-size: 0.85rem; z-index: 9999; display: flex; justify-content: center; align-items: center; gap: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.15);">
+<div id="consentBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: white; padding: 15px; text-align: center; font-size: 0.85rem; z-index: 9999; display: flex; justify-content: center; align-items: center; gap: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.15); flex-wrap: wrap;">
   <span>We use cookies to optimize your experience. By continuing, you agree to our Privacy Policy in compliance with the DPDP Act 2023.</span>
-  <button onclick="acceptConsent()" style="background: #10b981; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; font-weight: 600;">Accept</button>
+  <div style="display: flex; gap: 8px;">
+    <button onclick="acceptConsent()" style="background: #10b981; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; font-weight: 600;">Accept</button>
+    <button onclick="rejectConsent()" style="background: #ef4444; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; font-weight: 600;">Reject</button>
+  </div>
 </div>
 <script>
   function acceptConsent() {
     document.getElementById('consentBanner').style.display = 'none';
     localStorage.setItem('cookieConsent', 'accepted');
+    if (typeof window.initializePixel === 'function') {
+      window.initializePixel();
+    }
   }
-  if (localStorage.getItem('cookieConsent') === 'accepted') {
+  function rejectConsent() {
+    document.getElementById('consentBanner').style.display = 'none';
+    localStorage.setItem('cookieConsent', 'rejected');
+  }
+  const currentConsent = localStorage.getItem('cookieConsent');
+  if (currentConsent === 'accepted' || currentConsent === 'rejected') {
     document.getElementById('consentBanner').style.display = 'none';
   }
 </script>
@@ -1111,7 +1318,7 @@
     <span class="label">🔥 Happy Tiffin System</span>
     <span class="price">₹499 <small style="text-decoration:line-through; color:var(--text-muted); font-size:0.75rem;">₹1,299</small></span>
   </div>
-  <a href="https://superprofile.bio/vp/FUIMWaYB" class="btn btn-primary btn-pulse" style="padding:0.7rem 1.4rem; font-size:0.9rem;">
+  <a href="https://superprofile.bio/vp/kids-101-recipes" class="btn btn-primary btn-pulse" style="padding:0.7rem 1.4rem; font-size:0.9rem;">
     Get System Now
   </a>
 </div>
@@ -1121,8 +1328,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
-  // 2026 Funnel Superpower: Interactive Veggie Deficit Calculator Math Logic
-  function calculateDeficit() {
+  // 2026 Funnel Superpower: Interactive Picky Eating Calculator Math Logic
+  function calculatePickyScore() {
     const age = document.getElementById('calcAge').value;
     const tiffin = document.getElementById('calcTiffin').value;
     
@@ -1145,11 +1352,11 @@
 
     const finalScore = Math.min(100, Math.max(0, baseScore));
     
-    // 2026 Funnel Superpower: Meta Pixel custom retargeting trigger
-    if (typeof fbq === 'function') {
-      fbq('trackCustom', 'CalculatedVeggieDeficit', {
-        deficitPercentage: finalScore,
-        severity: finalScore >= 70 ? 'CRITICAL' : (finalScore >= 45 ? 'MODERATE' : 'LOW'),
+    // 2026 Funnel Superpower: Meta Pixel custom retargeting trigger (if initialized)
+    if (typeof fbq === 'function' && window.pixelInitialized) {
+      fbq('trackCustom', 'CalculatedPickyScore', {
+        pickyPercentage: finalScore,
+        severity: finalScore >= 70 ? 'HIGH' : (finalScore >= 45 ? 'MODERATE' : 'LOW'),
         ageGroup: age,
         tiffinReturns: tiffin
       });
@@ -1175,37 +1382,70 @@
       if (finalScore >= 70) {
         gaugeFill.style.stroke = '#EF5350';
         if (statusLabel) {
-          statusLabel.textContent = 'CRITICAL DEFICIT 🚨';
+          statusLabel.textContent = 'HIGH PICKY RATING ⚠️';
           statusLabel.style.color = '#EF5350';
         }
-        if (descLabel) descLabel.textContent = 'Your child is at critical nutrition deficit! Essential micronutrients are missing daily. secret visual swapping and shape tricks are highly recommended immediately.';
+        if (descLabel) descLabel.textContent = 'Your child regularly skips green veggies, dals, and salads. Adding creative presentation shapes and smart recipe swaps will make lunchboxes fun and simple.';
       } else if (finalScore >= 45) {
         gaugeFill.style.stroke = '#FFB300';
         if (statusLabel) {
-          statusLabel.textContent = 'MODERATE DEFICIT ⚠️';
+          statusLabel.textContent = 'MODERATE RATING 👍';
           statusLabel.style.color = '#FFB300';
         }
-        if (descLabel) descLabel.textContent = 'Moderate nutrient deficit detected. Your child regularly avoids essential veggies and protein. Simple ingredient swaps will help balance their growth meals.';
+        if (descLabel) descLabel.textContent = 'Moderate picky eating. Your child avoids some specific groups. Subtle ingredient swaps and simple presentations will help build healthy routine habits.';
       } else {
         gaugeFill.style.stroke = '#4CAF50';
         if (statusLabel) {
-          statusLabel.textContent = 'LOW DEFICIT 👍';
+          statusLabel.textContent = 'GOOD DIVERSITY 👍';
           statusLabel.style.color = '#4CAF50';
         }
-        if (descLabel) descLabel.textContent = 'Nutritional balance looks healthy. Minor picky nakhre can be smoothed out with standard meal rotation calendar.';
+        if (descLabel) descLabel.textContent = 'Dietary variety looks healthy. Avoid tiffin monotony and maintain clean habits by checking out our menu planner rotation.';
       }
     }
   }
 
+  // 2026 Funnel Superpower: Daily Reset Countdown Timer Script
+  function startCountdown() {
+    function updateTimer() {
+      const now = new Date();
+      const target = new Date();
+      target.setHours(23, 59, 59, 999);
+      
+      let diff = target.getTime() - now.getTime();
+      if (diff <= 0) {
+        target.setDate(target.getDate() + 1);
+        diff = target.getTime() - now.getTime();
+      }
+      
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      
+      const daysEl = document.getElementById('cdDays');
+      const hoursEl = document.getElementById('cdHours');
+      const minsEl = document.getElementById('cdMin');
+      const secsEl = document.getElementById('cdSec');
+      
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+      if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+      if (secsEl) secsEl.textContent = String(secs).padStart(2, '0');
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
   // Load animation triggers
   window.addEventListener('DOMContentLoaded', () => {
-    calculateDeficit();
+    calculatePickyScore();
+    startCountdown();
     
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
 
       // Pre-apply reveal triggers
-      const revealElements = document.querySelectorAll('.hero-content, .hero-media, .framework-card, .checklist-item, .story-card, .gallery-img, .rh-card, .compare-row, .pricing-card');
+      const revealElements = document.querySelectorAll('.hero-content, .hero-media, .framework-card, .checklist-item, .story-card, .gallery-img, .rh-card, .compare-row, .pricing-card, .qualification-section');
       revealElements.forEach(el => {
         el.classList.add('gsap-reveal');
       });
@@ -1224,12 +1464,32 @@
           }
         });
       });
+
+      // Animate statistics counter numbers
+      const counters = document.querySelectorAll('.counter-num');
+      counters.forEach(counter => {
+        const target = parseFloat(counter.textContent);
+        gsap.fromTo(counter, {
+          innerText: 0
+        }, {
+          innerText: target,
+          duration: 1.5,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: counter,
+            start: 'top 92%',
+            toggleActions: 'play none none none'
+          },
+          snap: { innerText: 1 }
+        });
+      });
     }
   });
 </script>
 
 <!-- Lead Capture & Exit Intent Script -->
-<script src="lead_capture.js?v=1.2" defer></script>
+<script src="checkout_helper.js" defer></script>
+<script src="lead_capture.js?v=4.1" defer></script>
 
 </body>
 </html>

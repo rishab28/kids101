@@ -1,0 +1,11 @@
+node_modules/
+.vercel/
+.env
+.env.local
+.env.*.local
+.DS_Store
+dist/
+build/
+*.log
+external_repos/
+local_server.js

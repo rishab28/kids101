@@ -1,258 +1,666 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Special Thank You Offer</title>
-  
-  <link rel="stylesheet" href="style.css?v=3.0" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>" />
+  <title>Expert Upgrade — The Advanced Kids Nutrition Masterplan</title>
+  <!-- Cashfree JS SDK v3 -->
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 
-  <!-- Preconnect for performance -->
+  <link rel="stylesheet" href="style.css?v=4.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (Consent-Gated — DPDP Act 2023 Compliant) -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '832552641809527');
-  fbq('track', 'PageView');
-  fbq('trackCustom', 'UpsellPageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=832552641809527&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  window.initializePixel = function() {
+    if (window.pixelInitialized) return;
+    window.pixelInitialized = true;
 
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
-  </script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-  <script>
-  if (typeof fbq === 'function') {
+    fbq('init', '832552641809527');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'UpsellPageView');
+
     fbq('track', 'ViewContent', {
-      content_name: 'Kids Upsell Family Plan',
+      content_name: 'Kids Complete Nutrition Vault Upsell',
       content_type: 'product',
       value: 999,
       currency: 'INR'
     });
+  };
+
+  // Fire only if user already gave consent on landing page
+  if (localStorage.getItem('cookieConsent') === 'accepted') {
+    window.initializePixel();
   }
   </script>
-  
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=832552641809527&ev=PageView&noscript=1"
+  /></noscript>
+
   <style>
-    /* Specific styling tweaks for Upsell flow */
-    .stop-bar {
-      background: #EF5350;
+    :root { --upsell-gold: #F59E0B; --upsell-gold-light: #FEF3C7; }
+
+    .urgent-top-bar {
+      background: linear-gradient(90deg, #C62828, #E53935);
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 12px 16px;
       font-weight: 700;
       font-family: var(--font-heading);
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      animation: pulse-bg 2s infinite;
     }
-    .progress-bar-container {
-      max-width: 600px;
-      margin: 30px auto 10px auto;
+    @keyframes pulse-bg {
+      0%,100% { background: linear-gradient(90deg,#C62828,#E53935); }
+      50%      { background: linear-gradient(90deg,#E53935,#C62828); }
+    }
+
+    .order-confirm-bar {
+      background: rgba(46,125,50,0.07);
+      border: 1px solid rgba(46,125,50,0.2);
+      border-radius: 10px;
+      max-width: 650px;
+      margin: 20px auto 0;
+      padding: 14px 20px;
       text-align: center;
     }
-    .progress-label {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 8px;
+    .order-confirm-bar .conf-title {
+      color: #2E7D32;
+      font-weight: 800;
+      font-size: 1rem;
+      font-family: var(--font-heading);
+    }
+    .order-confirm-bar p {
       color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 4px 0 0;
     }
-    .progress-bg {
-      background: #F1ECE3;
-      height: 12px;
-      border-radius: 10px;
-      overflow: hidden;
+
+    .upsell-hero-section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px 16px 0;
+      text-align: center;
     }
-    .progress-fill {
-      background: var(--secondary);
-      width: 50%;
-      height: 100%;
-      border-radius: 10px;
-      transition: width 1s ease-in-out;
+
+    .upsell-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #F59E0B, #EF6C00);
+      color: white;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 6px 18px;
+      border-radius: 100px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: var(--font-heading);
     }
+
+    .upsell-main-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-family: var(--font-heading);
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .upsell-main-title .red { color: #C62828; }
+    .upsell-main-title .green { color: var(--secondary); }
+
+    .upsell-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 660px;
+      margin: 0 auto 24px;
+    }
+
+    /* Problem Agitation strip */
+    .problem-strip {
+      background: #FFF8F0;
+      border: 1px solid #FFD180;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .problem-strip h4 {
+      color: #BF360C;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      margin: 0 0 10px;
+    }
+    .problem-strip ul {
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .problem-strip ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .problem-strip ul li .icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    /* Value Stack Box */
+    .value-stack-box {
+      background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin: 30px 0;
+      color: white;
+      text-align: left;
+    }
+    .value-stack-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      text-align: center;
+      margin: 0 0 24px;
+      color: #FFEE58;
+    }
+    .vs-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      gap: 12px;
+    }
+    .vs-item:last-child { border-bottom: none; }
+    .vs-item-left { flex: 1; }
+    .vs-item-left .vs-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #A5D6A7;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .vs-item-left .vs-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: var(--font-heading);
+      color: white;
+      display: block;
+    }
+    .vs-item-left .vs-desc {
+      font-size: 0.8rem;
+      color: #C8E6C9;
+      display: block;
+      margin-top: 2px;
+    }
+    .vs-price {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+      color: #FFEE58;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .vs-total-row {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 2px solid rgba(255,255,255,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .vs-total-row .vs-total-label {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+    }
+    .vs-total-row .vs-total-price-old {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      text-decoration: line-through;
+      color: #EF9A9A;
+      margin-right: 8px;
+    }
+    .vs-total-row .vs-total-price-new {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #FFEE58;
+    }
+
+    /* CTA Section */
+    .upsell-cta-box {
+      background: #FFFDF9;
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .upsell-cta-box .cta-top-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .upsell-cta-box .cta-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+    .upsell-cta-box .cta-original-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-decoration: line-through;
+      color: #BDBDBD;
+      font-family: var(--font-heading);
+    }
+    .upsell-cta-box .cta-now-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: var(--font-heading);
+    }
+    .upsell-cta-box .cta-savings-tag {
+      background: #E8F5E9;
+      color: #2E7D32;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .btn-upsell-main {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 16px auto 8px;
+      background: linear-gradient(135deg, #E65100, #F57C00);
+      color: white;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 18px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      box-shadow: 0 6px 30px rgba(230,81,0,0.4);
+      line-height: 1.3;
+      text-align: center;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); box-shadow: 0 6px 30px rgba(230,81,0,0.4); }
+      50%      { transform: scale(1.025); box-shadow: 0 8px 40px rgba(230,81,0,0.55); }
+    }
+    .btn-upsell-main:hover { opacity: 0.92; }
+
+    .trust-chips {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 12px 0 0;
+    }
+    .trust-chips span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     .no-thanks-link {
       display: block;
       text-align: center;
-      margin-top: 25px;
+      margin-top: 24px;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: underline;
     }
-    .no-thanks-link:hover {
+    .no-thanks-link:hover { color: var(--text-secondary); }
+
+    /* Testimonials mini strip */
+    .mini-testimonials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    @media (max-width: 600px) { .mini-testimonials { grid-template-columns: 1fr; } }
+    .mini-testi {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .mini-testi .stars { color: #F59E0B; font-size: 0.9rem; margin-bottom: 6px; }
+    .mini-testi .testi-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .mini-testi .testi-name {
+      font-size: 0.8rem;
+      font-weight: 700;
       color: var(--text-primary);
+    }
+
+    /* Countdown inline */
+    .countdown-inline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 18px 0 8px;
+      font-family: var(--font-heading);
+    }
+    .countdown-inline .cd-label {
+      font-size: 0.9rem;
+      color: #C62828;
+      font-weight: 700;
+    }
+    .countdown-inline .cd-time {
+      background: #C62828;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 8px;
+      min-width: 60px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- STOP BAR -->
-  <div class="stop-bar" style="background: var(--secondary); color: white;">
-    🎁 Special Thank You Offer — Only Available Right Now
+  <!-- URGENT TOP BAR -->
+  <div class="urgent-top-bar">
+    ⏰ WAIT! Yeh page close karne se pehle padein — Sirf aaj ke liye ek special upgrade hai aapke liye
   </div>
 
-  <!-- PROGRESS BAR -->
-  <div class="progress-bar-container" style="background: rgba(79, 175, 80, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(79, 175, 80, 0.15); margin-top: 20px;">
-    <div class="progress-label" style="color: var(--secondary); font-weight: 700; margin-bottom: 0;">✅ Order Confirmed! Your Kids Happy Tiffin System is on its way.</div>
-    <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 5px 0 0 0;">As a special thank you, unlock this one-time family upgrade before you go...</p>
+  <!-- ORDER CONFIRMATION BAR -->
+  <div class="order-confirm-bar" style="max-width:720px; margin:20px auto 0; padding:14px 20px;">
+    <div class="conf-title">✅ Badhai ho! Aapka Happy Tiffin System order confirm ho gaya hai.</div>
+    <p>Delivery WhatsApp & Email par ho gayi hogi. Ab 2 minute aur dijiye — aapke bachche ke liye ek aur powerful gift hai neeche...</p>
   </div>
 
-  <section class="hero" style="padding-top: 30px;">
-    <div class="container">
-      <div class="hero-content" style="grid-column: span 2; text-align: center; max-width: 800px; margin: 0 auto;">
-        <div class="badge" style="background: rgba(79, 175, 80, 0.1); color: var(--secondary);">🔥 One-Time Special Upgrade Offer</div>
-        
-        <h1 class="hero-title" style="font-size: 2.5rem; line-height: 1.2;">
-          Bachche ka tiffin to sudhar gaya... par <span class="highlight">baki family ki health ka kya? 🍏</span>
-        </h1>
-        
-        <p class="hero-subtitle" style="margin-top: 15px; font-size: 1.2rem;">
-          Picky eater bacche ki health ke sath-sath, aapke husband ka energy management, grandparents ki immunity, aur aapki apni fitness bhi utni hi important hai.
-        </p>
+  <!-- MAIN HERO SECTION -->
+  <div class="upsell-hero-section">
 
-        <!-- COUNTDOWN TIMER -->
-        <div class="countdown" id="upsellCountdown">
-          <div class="cd-box"><div class="n" id="cd-min">14</div><div class="l">Min</div></div>
-          <div class="cd-box"><div class="n" id="cd-sec">59</div><div class="l">Sec</div></div>
+    <div class="upsell-badge">🔥 Expert-Level Next Step — Sirf Is Page Par</div>
+
+    <h1 class="upsell-main-title">
+      Tiffin to solve hua... ab <span class="green">expert-level step</span> — dinner, snacks, protein, immunity sab ek saath? 🚀
+    </h1>
+
+    <p class="upsell-subtitle">
+      Aapne pehla aur sabse zaroori step le liya. Ab Smart Moms ek kadam aage jaati hain — jab tiffin routine ban jaye, tab dinner, immunity, aur sugar detox ka bhi system ban jaata hai. Yahi hai woh gap jo ordinary moms aur <em>expert moms</em> ke beech hota hai.
+    </p>
+
+    <!-- Problem Strip -->
+    <div class="problem-strip">
+      <h4>😩 Kya aap bhi yeh problems face karti hain?</h4>
+      <ul>
+        <li><span class="icon">🍟</span> Bachcha school se aate hi chips, biscuits, cold drinks maangta hai</li>
+        <li><span class="icon">🍽️</span> Dinner table pe roz natak, 1 ghante ki ladai, phir bhi khaana adhoora</li>
+        <li><span class="icon">💪</span> Doctor ne kaha "protein kam hai" par bachcha dal-sabzi nahi khata</li>
+        <li><span class="icon">🤧</span> Bar bar sardi-khansi, immunity weak hai, school se chutti</li>
+        <li><span class="icon">🏪</span> Packaged food mein kya harmful chemicals hain, samajh nahi aata</li>
+        <li><span class="icon">🍫</span> Sugar cravings itni zyada ki meetha na milne par rona shuru</li>
+      </ul>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-inline">
+      <span class="cd-label">⏰ Yeh offer band hogi in:</span>
+      <span class="cd-time" id="cd-min">14</span>
+      <span style="color:#C62828;font-weight:800;font-size:1.2rem;">:</span>
+      <span class="cd-time" id="cd-sec">59</span>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text-muted);margin:0 0 8px;">Page reload hone par offer expire ho sakti hai.</p>
+
+    <!-- VALUE STACK BOX -->
+    <div class="value-stack-box">
+      <h3>🏆 The Advanced Kids Nutrition Masterplan — Aap Paa Rahe Hain:</h3>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Book 1</span>
+          <span class="vs-name">Kids Sugar-Free Snack Vault (50+ Recipes)</span>
+          <span class="vs-desc">Chips, biscuits aur chocolate ke healthy ghar-wale alternatives</span>
         </div>
+        <span class="vs-price">₹799</span>
+      </div>
 
-        <!-- Upsell Pitch Box -->
-        <div style="background: #FFFDF9; border: 2px dashed var(--primary); padding: 30px; border-radius: var(--radius-lg); text-align: left; margin: 30px 0; box-shadow: var(--shadow-md);">
-          <h3 style="margin-bottom: 20px; font-size: 1.4rem; color: var(--primary); text-align: center;">👇 Upgrade to the Complete Family Health Blueprint (₹999 Only)</h3>
-          
-          <ul class="check-list">
-            <li>
-              <span class="ic">✓</span>
-              <div>
-                <span class="what-title">1. High-Protein Indian Meal Plans (For Parents)</span>
-                <span class="what-desc">Husband aur aapki daily health ke liye high-protein, low-carb traditional recipes jo healthy metabolism aur energy badhane me madad karegi.</span>
-              </div>
-            </li>
-            <li>
-              <span class="ic">✓</span>
-              <div>
-                <span class="what-title">2. Grandparents Wellness & Joint-Care Recipes</span>
-                <span class="what-desc">Ghar ke bade-bujurgon ke liye calcium, fiber aur digestion-friendly Indian foods ki custom list jo unki general health aur active aging me madad karegi.</span>
-              </div>
-            </li>
-            <li>
-              <span class="ic">✓</span>
-              <div>
-                <span class="what-title">3. "No-Sugar" Desi Desserts Guide</span>
-                <span class="what-desc">Kheer, halwa aur laddoo banayein bina refined sugar ya harmful sweeteners ke. Sabse safe, natural aur delicious Indian sweets recipes.</span>
-              </div>
-            </li>
-            <li>
-              <span class="ic">✓</span>
-              <div>
-                <span class="what-title">4. Kitchen Toxic Chemical Audit & Grocery Checklist</span>
-                <span class="what-desc">Kaise identify karein ki jo refined oil, grocery aur packaged foods aap bacchon ke liye laa rahe hain, unme toxic chemicals to nahi? Smart shopping checklist.</span>
-              </div>
-            </li>
-          </ul>
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Book 2</span>
+          <span class="vs-name">Picky-Eater 30-Day Dinner Rotation Blueprint</span>
+          <span class="vs-desc">30 din ka ready-made dinner plan jisme veggies aur protein hidden</span>
         </div>
+        <span class="vs-price">₹899</span>
+      </div>
 
-        <div class="cta-container" style="margin: 0 auto; max-width: 500px;">
-          <a href="https://superprofile.bio/vp/Ro2FQ3-t" class="btn btn-primary btn-pulse" id="upsellCTA">
-            Yes! I Want To Add Family Plan For ₹999 →
-          </a>
-          <p class="cta-subtext">Rs. 999 (One-Time Upgrade) • Safe Checkout</p>
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Book 3</span>
+          <span class="vs-name">🥛 Hidden Protein Master System (40+ Recipes)</span>
+          <span class="vs-desc">Paneer, dal, eggs (veg-friendly) ko bachche ke fav foods mein secretly add karo</span>
         </div>
+        <span class="vs-price">₹999</span>
+      </div>
 
-        <a href="downsell.html" class="no-thanks-link">No thanks, I just want the Happy Tiffin System. Skip this upgrade →</a>
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Book 4</span>
+          <span class="vs-name">🤧 Immunity-Boost Kitchen — Soups, Kadhas & Smoothies</span>
+          <span class="vs-desc">Har season mein bachche ki immunity strong rakhne ki 35 recipes</span>
+        </div>
+        <span class="vs-price">₹799</span>
+      </div>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Book 5</span>
+          <span class="vs-name">🍫 Sugar Detox for Kids — 21-Day Reset Plan</span>
+          <span class="vs-desc">Step-by-step guide to reduce sugar addiction without tantrums</span>
+        </div>
+        <span class="vs-price">₹699</span>
+      </div>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Bonus 1</span>
+          <span class="vs-name">🛒 Smart Label Reader — Packaged Food Chemicals Guide</span>
+          <span class="vs-desc">Bazar ke 50 common packaged foods ki hidden harmful ingredients ki list</span>
+        </div>
+        <span class="vs-price">₹499</span>
+      </div>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Bonus 2</span>
+          <span class="vs-name">🌙 Weekend Batch Cooking Blueprint</span>
+          <span class="vs-desc">Sunday ko 2 ghante mein pure week ka healthy meal prep — moms ka time saver</span>
+        </div>
+        <span class="vs-price">₹599</span>
+      </div>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Bonus 3</span>
+          <span class="vs-name">🎯 Growth Milestone Meal Planner (Age 2–12)</span>
+          <span class="vs-desc">Age-wise nutrition requirements aur kya khilana chahiye — ek detailed guide</span>
+        </div>
+        <span class="vs-price">₹799</span>
+      </div>
+
+      <div class="vs-item">
+        <div class="vs-item-left">
+          <span class="vs-num">Bonus 4</span>
+          <span class="vs-name">👨‍👩‍👧 Family Fussy-Eater Crisis Hotsheet</span>
+          <span class="vs-desc">Jab kuch bhi kaam na aaye — emergency strategies jo 100% moms ne tested ki hain</span>
+        </div>
+        <span class="vs-price">₹299</span>
+      </div>
+
+      <div class="vs-total-row">
+        <span class="vs-total-label">Kul Value</span>
+        <div>
+          <span class="vs-total-price-old">₹6,391</span>
+          <span class="vs-total-price-new">Sirf ₹999</span>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- MINI TESTIMONIALS -->
+    <div class="mini-testimonials">
+      <div class="mini-testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Snack Vault ki recipes ne meri life badal di. Mere bete ne khud kaha 'Mummy yeh chips se zyada tasty hai!' — yeh sun ke ro padi main."</p>
+        <span class="testi-name">— Kavita S., Jaipur (beta 7 saal)</span>
+      </div>
+      <div class="mini-testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Protein System se doctor shocked the — 3 months mein bachi ka weight aur height dono normal range mein aa gaye. Ek bhi tablet nahi di."</p>
+        <span class="testi-name">— Deepa M., Hyderabad (beti 5 saal)</span>
+      </div>
+      <div class="mini-testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"21-day Sugar Detox plan is complete family ke liye tha. Husband bhi unhealthy snacking chod diye! Dinner peaceful ho gaya."</p>
+        <span class="testi-name">— Ritu A., Lucknow</span>
+      </div>
+      <div class="mini-testi">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Smart Label Reader dekh ke mujhe pata chala jo chips 'baked' likhti thi — usmein kitna harmful tha. Ab main har cheez check karti hun."</p>
+        <span class="testi-name">— Ananya P., Pune</span>
+      </div>
+    </div>
+
+    <!-- CTA BOX -->
+    <div class="upsell-cta-box">
+      <p class="cta-top-tag">⚡ Sirf Aaj Ka Special Upgrade Price</p>
+      <p style="font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:0;">9 Powerful Books & Guides — ₹6,391 ki value</p>
+      <div class="cta-price-row">
+        <span class="cta-original-price">₹6,391</span>
+        <span style="font-size:1.1rem;color:var(--text-muted);font-weight:700;">→</span>
+        <span class="cta-now-price">₹999 Only</span>
+        <span class="cta-savings-tag">आप बचा रहे हैं ₹5,392</span>
+      </div>
+      <p style="font-size:0.88rem;color:var(--text-muted);margin:0 0 4px;">Ek cup chai se bhi sasti hai — aur bachche ki poori zindagi badal sakti hai ✅</p>
+
+      <a href="https://superprofile.bio/vp/Ro2FQ3-t" class="btn-upsell-main" id="upsellCTA">
+        Haan! Mujhe Complete Nutrition Vault Chahiye — ₹999 Mein →
+      </a>
+
+      <div class="trust-chips">
+        <span>🔒 100% Secure Payment</span>
+        <span>⚡ Instant WhatsApp Delivery</span>
+        <span>💯 7-Day Refund Guarantee</span>
+        <span>📱 Read on Any Device</span>
+      </div>
+    </div>
+
+    <!-- NO THANKS -->
+    <a href="upsell2.html" class="no-thanks-link">Nahi chahiye, mujhe sirf Happy Tiffin System theek hai. Skip karna chahti hoon →</a>
+    <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin:8px 0 40px;">Yeh offer sirf is page par available hai. Close karne par wapas nahi milegi.</p>
+
+  </div><!-- /upsell-hero-section -->
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
+  <footer class="footer" style="padding: 40px 20px; background: #2D241E; color: #C0B7B1; text-align: center; font-size: 0.9rem; font-family: var(--font-body);">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
       <p>© 2026 The Happy Tiffin. All rights reserved.</p>
       <p style="margin-top: 10px; font-size: 0.85rem;">
-        <a href="privacy.html">Privacy Policy</a> | 
-        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html" style="color: #C0B7B1; text-decoration: underline;">Privacy Policy</a> |
+        <a href="terms.html" style="color: #C0B7B1; text-decoration: underline;">Terms of Service</a>
       </p>
+      <p style="margin-top: 5px; font-size: 0.82rem; color: #A89E97;">Support: secretswapvault@gmail.com</p>
+      <div style="font-size:0.82rem;color:#A89E97;margin-top:20px;line-height:1.5;border-top:1px solid rgba(255,255,255,0.08);padding-top:15px;text-align:justify;">
+        <p><strong>Disclaimer:</strong> This website (The Happy Tiffin) is not affiliated with Facebook, Instagram, or Meta Platforms, Inc. in any way. The testimonies and chat feedback shared are based on individual experiences of mothers and we do not guarantee similar results for every child. All nutritional recipes and swaps are developed based on home-cooking practices and general child health information, and are not intended to replace professional pediatric or medical advice. Always consult your pediatrician if your child has specific allergies, medical conditions, or eating disorders.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts: Meta Pixel & Timer -->
+  <script src="checkout_helper.js" defer></script>
   <script>
-    // Meta Pixel click track
+    // Meta Pixel click track & Cashfree Checkout
     var upsellBtn = document.getElementById('upsellCTA');
     if (upsellBtn) {
-      upsellBtn.addEventListener('click', function() {
+      upsellBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Track Pixel
         if (typeof fbq === 'function') {
           fbq('track', 'InitiateCheckout', {
             value: 999,
             currency: 'INR',
-            content_name: 'Kids Family Plan Upsell'
+            content_name: 'Complete Kids Nutrition Vault Upsell'
           });
+        }
+        
+        // Trigger Cashfree
+        const savedLead = localStorage.getItem('funnel_lead');
+        let lead = { name: 'Guest Customer', email: 'customer@example.com', phone: '9999999999' };
+        if (savedLead) {
+          try {
+            lead = JSON.parse(savedLead);
+          } catch (err) {
+            console.error(err);
+          }
+        }
+        
+        if (typeof window.processCashfreeCheckout === 'function') {
+          window.processCashfreeCheckout(lead.name, lead.email, lead.phone, 999, 'thankyou-vip.html');
+        } else {
+          setTimeout(function() {
+            if (typeof window.processCashfreeCheckout === 'function') {
+              window.processCashfreeCheckout(lead.name, lead.email, lead.phone, 999, 'thankyou-vip.html');
+            } else {
+              alert("Payment helper could not load. Please refresh the page.");
+            }
+          }, 150);
         }
       });
     }
 
-    // 2026 Funnel Superpower: UTM forwarding & lead prefill links updater
-    (function() {
-      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid'];
-      const cachedUtms = {};
-      utmKeys.forEach(key => {
-        const val = sessionStorage.getItem(key);
-        if (val) cachedUtms[key] = val;
-      });
-
-      const buttons = document.querySelectorAll('a');
-      buttons.forEach(btn => {
-        let href = btn.getAttribute('href') || "";
-        if (href.includes("superprofile.bio")) {
-          try {
-            const urlObj = new URL(href);
-            Object.keys(cachedUtms).forEach(key => {
-              urlObj.searchParams.set(key, cachedUtms[key]);
-            });
-            const savedLead = localStorage.getItem('funnel_lead');
-            if (savedLead) {
-              const lead = JSON.parse(savedLead);
-              if (lead.name) urlObj.searchParams.set('name', lead.name);
-              if (lead.email) urlObj.searchParams.set('email', lead.email);
-              if (lead.phone) {
-                urlObj.searchParams.set('phone', lead.phone);
-                urlObj.searchParams.set('mobile', lead.phone);
-              }
-            }
-            btn.setAttribute('href', urlObj.toString());
-          } catch(e) {}
-        }
-      });
-    })();
-
-    // Real session-based countdown (14:59 from page load)
+    // Countdown timer
     (function(){
       var total = 14*60 + 59;
       var minEl = document.getElementById('cd-min');
       var secEl = document.getElementById('cd-sec');
+      if (!minEl || !secEl) return;
       var tick = setInterval(function(){
-        if(total <= 0){clearInterval(tick);return;}
+        if(total <= 0){ clearInterval(tick); return; }
         total--;
-        var m = Math.floor(total/60);
-        var s = total%60;
+        var m = Math.floor(total/60), s = total%60;
         minEl.textContent = m<10?'0'+m:m;
         secEl.textContent = s<10?'0'+s:s;
       },1000);

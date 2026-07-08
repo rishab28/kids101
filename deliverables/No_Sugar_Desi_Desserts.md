@@ -90,3 +90,41 @@ This guide contains **6 classic Desi desserts** re-engineered using low-GI sweet
     1.  **Roast:** Heat ghee in a pan. Add oats powder and almond flour. Sauté on low heat for 5 minutes until golden.
     2.  **Hydrate:** Pour in the warm water slowly, stirring continuously to prevent lumps. Cook until the mixture thickens.
     3.  **Sweeten:** Stir in the date syrup and cardamom powder. Cook for another 2 minutes until the halwa starts leaving the sides of the pan. Serve warm.
+
+---
+
+## 5. Honey-Sweetened Kaju Katli (Dairy-Free)
+*Classic cashew fudge made without white refined sugar syrup, using raw honey and ground cashew meal.*
+
+*   **Prep Time:** 10 mins | **Cook Time:** 5 mins | **Yield:** 12 diamonds
+*   **Ingredients:**
+    *   Raw cashews (powdered fine): 1 cup
+    *   Raw organic honey or date syrup: 3 tbsp
+    *   Rose water: 1/2 tsp
+    *   Cardamom powder: A pinch
+    *   A2 Ghee (to grease tray): 1/2 tsp
+*   **Instructions:**
+    1.  **Cashew Powder:** Grind raw cashews in a dry blender. Pulse in short 3-second bursts to prevent the cashews from releasing oil and turning into butter. Sieve the powder to ensure it is fine.
+    2.  **Heat Mixture:** In a non-stick pan, add honey and 1 tbsp water. Bring to a gentle bubble on very low heat (do not boil or caramelize).
+    3.  **Combine:** Stir in the cashew powder, cardamom powder, and rose water. Stir continuously for 3-4 minutes until it forms a soft, smooth dough that pulls away from the sides.
+    4.  **Knead & Roll:** Place the dough on a sheet of greased parchment paper. Place another sheet on top. Use a rolling pin to roll it out to a 1/4-inch thickness.
+    5.  **Slice:** Let it cool completely. Use a knife to slice into classic diamond shapes.
+
+---
+
+## 6. Date-Sweetened Almond Milk Gajar Halwa
+*Traditional carrot halwa slow-cooked in thick almond milk and naturally sweetened with dry dates powder and raisins.*
+
+*   **Prep Time:** 10 mins | **Cook Time:** 25 mins | **Yield:** 3 servings
+*   **Ingredients:**
+    *   Red carrots (finely grated): 2.5 cups
+    *   Unsweetened almond milk: 2 cups
+    *   Dry dates powder: 4 tbsp
+    *   A2 Ghee: 1 tbsp
+    *   Cardamom powder: 1/2 tsp
+    *   Raisins and chopped almonds: 2 tbsp
+*   **Instructions:**
+    1.  **Sauté Carrots:** Heat ghee in a deep pan. Add grated carrots and sauté on medium heat for 5 minutes until they soften slightly and turn fragrant.
+    2.  **Simmer in Milk:** Pour in the almond milk. Mix well, cover, and cook on low heat for 12-15 minutes, stirring occasionally, until the carrots absorb all the milk.
+    3.  **Sweeten & Flavor:** Add the dry dates powder, raisins, and chopped almonds. Stir continuously on medium heat for 4-5 minutes until the halwa thickens and turns glossy.
+    4.  **Finish:** Stir in the cardamom powder. Serve warm.
